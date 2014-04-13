@@ -16,7 +16,7 @@ body {
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 70px;
+  height: auto;
   background-color: #f5f5f5;
 }
 
@@ -60,53 +60,6 @@ body {
   border-top-right-radius: 0;
 }
 
-.submissionPanel {
-  margin-top: 0.2em;
-}
-
-.commentSection {
-  text-align: center;
-  /* TODO: improve positioning */
-}
-
-.commentBoxContainer {
-  margin-top: 1em;
-  text-align: center;
-  width: 40%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.commentBox {
-  width: 100%;
-}
-
 #mainContainer {
   margin-top: 1.5em;
-}
-
-#edit-button {
-  float: right;
-}
-
-.submit-button {
-  float: right;
-}
-
-td.submissionDetails {
-  text-align: center;
-}
-
-.comments {
-  padding-top: 1em;
-}
-
-.comment {
-  width: 35%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.searchbar {
-  width: 20em;
 }

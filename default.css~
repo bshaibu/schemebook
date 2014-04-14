@@ -79,7 +79,6 @@ left:-100px;}
 font-size:30px;}
 
 #close_button{
-position:relative;
 margin-left:1000px;
 }
 

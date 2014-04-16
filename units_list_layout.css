@@ -34,3 +34,14 @@ a.high_light_unit:hover,a.high_light_unit:active
 {
 background-color:#7A991A;
 }
+
+
+
+
+
+
+
+tr.lesson_creation>td
+{
+  padding-bottom: 3em;
+}

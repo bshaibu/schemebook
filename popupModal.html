@@ -1,11 +1,23 @@
 
 <section>
+	<script type="text/javascript">
+	function insert(){
+	console.log("clicked");
+console.log(parent);
+	var t=parent.document.getElementById("tableClasses");
+	var row=t.insertRow(0);
+	row.setAttribute("id", "rowID", 0);
+	var cell1 = row.insertCell(0);
+	cell1.innerHTML='<a href="url">getElementById("className").value</a>';
+
+}
+	</script>
 	<header class="modal-header">		
 		<h3>Enter Your Class Details</h3>
 	</header>
 <div class="modal-body">
 <form>
-	<pre>Class Name:<input type="text" name="classtname"></pre><br>
+	<pre>Class Name:<input type="text" name="classname" id="className"></pre><br>
 	<pre>School    :<input type="text" name="school"></pre><br>
 	<pre>Grade     :<input type="text" name="grade"></pre>
 
@@ -21,7 +33,7 @@
 </form>
 
 	<footer>
-		<button id="popupSave">Save Class</button>
+		<button id="popupSave" onclick="insert()">Save Class</button>
 	</footer>
 
 </div>

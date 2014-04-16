@@ -25,7 +25,17 @@
 		<script type="text/javascript">
 		    function openLessonsPage() {
 			    window.open("lessons_list_layout.html","_self")
-            }			
+            }
+			
+			function addUnit(){
+			    var navigation_bar=document.getElementById("units_navigation_bar");
+				var new_tab=['<li class="units_nav_bar_items">',
+                                     '<a class="high_light_unit" href="#unit1">Unit 1</a>',
+                             '</li>'
+                            ].join('\n');
+				
+				navigation_bar.innerHTML=navigation_bar.innerHTML+new_tab;
+			}
 		
 		</script>
 		
@@ -64,7 +74,7 @@
             <div style="font-size:3em">6.813</div>
 			
 	        <div >
-	          <ul class="units_nav_bar">
+	          <ul class="units_nav_bar" id="units_navigation_bar">
 	            <li class="units_nav_bar_items"><a class="high_light_unit" href="#unit1">Unit 1</a></li>
 	          </ul>
 	        </div><!--/.nav-collapse -->
@@ -84,34 +94,13 @@
 				<th style="width:30%">Progress Comments</th>
 				<th style="width:10%">Check Progress</th>
 	        </tr>
-	        <tr>
-				<td>1</td>
-				<td>Teach topic on stochiometry</td>		
-				<td>4/14/2014</td>
-				<td>I taught the kids and they really understood the lesson.</td>
-				<td style="color:green;"><b>&#x2713;</b> </td>
-	        </tr>
-	        <tr>
-				<td>2</td>
-				<td>Revise Stoichiometry</td>		
-				<td>4/14/2014</td>
-				<td>I taught the kids and they really understood the lesson.</td>
-				<td style="color:green;"><b>&#x2713;</b>  </td>
-	        </tr>
-	        <tr>
-				<td>3</td>
-				<td>Re read stoichiometry</td>		
-				<td>4/14/2014</td>
-				<td>I taught the kids and they really understood the lesson.</td>
-				<td style="color:green;"><b>&#x2713;</b> </td>
-			</tr>
-			
+	        
         </table>
 		
 		</br>
 		
 		<div id="new_lesson">
-		    <button id="create_lesson_btn" type="button">Create New Lesson</button>
+		    <button id="create_lesson_btn" type="button" onClick="openLessonsPage()">Create New Lesson</button>
         </div>
 		
 		</br>
@@ -158,7 +147,7 @@
             </div><!-- .span4 -->
    
             <div class="col-lg-4">
-		        <button type="button" >Add Another Unit</button>
+		        <button type="button" onClick="addUnit()">Add Another Unit</button>
             </div><!-- .span4 -->
         </div><!-- .row --> 
 		

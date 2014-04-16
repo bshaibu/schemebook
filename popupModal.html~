@@ -2,11 +2,13 @@
 <section>
 	<script type="text/javascript">
 	function insert(){
-	var table=getElementByID("tableClasses");
-	var row=table.insertRow(0);
+	console.log("clicked");
+console.log(parent);
+	var table=parent.document.getElementById("tableClasses");
+	var row=table.insertRow(2);
 	row.setAttribute("id", "rowID", 0);
 	var cell1 = row.insertCell(0);
-	cell1.innerHTML=getElementById("className").value;
+	cell1.innerHTML='<a href="url">getElementById("className").value</a>';
 
 }
 	</script>

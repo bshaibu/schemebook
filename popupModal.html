@@ -3,7 +3,7 @@
 	<script type="text/javascript">
 	function insert(){
 	console.log("clicked");
-console.log(parent);
+	console.log(parent);
 	var t=parent.document.getElementById("tableClasses");
 	var row=t.insertRow(0);
 	row.setAttribute("id", "rowID", 0);
@@ -11,6 +11,25 @@ console.log(parent);
 	cell1.innerHTML='<a href="url">getElementById("className").value</a>';
 
 }
+	function addFields(){
+		
+
+
+		//var t_field=document.getElementById("orderedUnits");
+		//t_field.appendChild('<li><input type="text" name="classtname"></li>');
+
+// 		var node=document.createElement("LI");
+// var textnode=document.createTextNode(<li><input type="text" name="classtname"></li>);
+// node.appendChild(textnode);
+// document.getElementById("orderedUnits").appendChild(node);
+
+var tf=document.getElementById("orderedUnits");
+var nbox='<pre>                <li><input type="text" name="classtname"></li></pre>';
+tf.innerHTML=tf.innerHTML+nbox;
+
+
+			}
+
 	</script>
 	<header class="modal-header">		
 		<h3>Enter Your Class Details</h3>
@@ -33,6 +52,7 @@ console.log(parent);
 </form>
 
 	<footer>
+		<button id="addfields" onclick="addFields()">More</button>
 		<button id="popupSave" onclick="insert()">Save Class</button>
 	</footer>
 

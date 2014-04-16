@@ -19,6 +19,12 @@
 
 		<link href="default.css" rel="stylesheet">
 
+		<!-- Page Specific -->
+		<link rel='stylesheet' type='text/css' href='fullcalendar/fullcalendar.css' />
+		<script type='text/javascript' src='fullcalendar/fullcalendar.js'></script>
+		<script type='text/javascript' src='main_page.js'></script>
+		<!-- We used fullcalendar -->
+
 		<title>Schemebook | Page Title</title>
   	</head>
 
@@ -47,14 +53,21 @@
 
 
 	    <div class="container" id="mainContainer">
-<!-- ******************* Replace This Stuff **************** -->
-
-	     activity feed
-	     upcoming lessons
-	     calendar
-
-
-<!-- ****************** Replace The Above ********************* -->
+	    	<div class="col-md-6">
+		    	<h1><u>Recent Activity Feed</u></h1>
+			    	<ul>
+			    		<li>Edited UI Lesson 3</li>
+			    		<li>Edited Calculus 3 Lesson 1 </li>
+			    	</ul>
+		    	<h1><u>Upcoming Lessons</u></h1>
+		    		<ul>
+		    			<li>UI Lesson 2</li>		<span style="margin-right: 20%;">4/20/14</span>
+		    			<li>Calculus 3 Lesson 1 </li> 	<span style="margin-right: 20%;">4/22/14</span>
+		    		</ul>
+	    	</div>
+	    	<div class="col-md-6">
+	    		<div id='calendar'></div>	    	
+	    	</div>	  	   
     	</div><!--/container-->
 
     	<div id="footer">

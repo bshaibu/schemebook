@@ -54,34 +54,25 @@ window.open("popupModal.html","_blank","toolbar=yes, scrollbars=yes, resizable=y
 
 
 	    <div class="container" id="mainContainer" style="width:100%">
+	      <div class="starter-template">
 
-
-<!-- ******************* Replace This Stuff **************** -->
-
-
-	      <div class="starter-template" style="float:left; width:50%;">
-
-
-		<table id="tableClasses">
-			<thead id="tableHead" style="width:100%">
-				<td id="column1"><b>Classes</b></td>			
-			</thead>
-		
-			<tr id="currentClasses">
-				<td><a href="units_list.html">6.813</a></td>		
-			</tr>
-		</table>
-	       
-	      </div>
-		
-	     <div class="starter-template" style="float:right;width:50%;">
-		       <h2 id="createClass_id"><b>Create Class</b></h2>
-		       <button id="buttonScratch" onclick="openWin()">Create Class From Scratch</button>
-		       <button id="buttonImporting">Create Class By Importing</button>
-	      </div-->
-
-
-<!-- ****************** Replace The Above ********************* -->
+			<table style="width:70%; margin-left:auto;margin-right:auto;">
+				<tr>
+					<td style="float:left;"><h2><b>Classes</b></h2></td>
+					<td ><h2><b>Create Class</b></h2></td>		
+				</tr>
+				<tr>
+					<td style="float:left; margin-left:2em;"><a href="units_list.html"><h3>6.813</h3></a></td></h3>
+					<td><button onclick="openWin()">Create Class From Scratch</button></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><button onclick="alert('Not in this version!');">Create Class By Importing</button></td>
+				</tr>
+			</table>
+		       
+		  </div>
+			
     	</div><!--/container-->
 
     	<div id="footer">

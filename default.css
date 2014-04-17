@@ -70,7 +70,9 @@ bottom:-50px;
 left:-190px;
 }
 #tableClasses{
-margin-left:190px;}
+margin-left:auto;
+margin-right:auto;
+width:60%;}
 #createClass_id{
 position:relative;
 left:-100px;}

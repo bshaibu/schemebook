@@ -28,18 +28,13 @@ text-align:center;
 padding:4px;
 text-decoration:none;
 text-transform:uppercase;
+border-left: solid #7A991A;
 }
 
 a.high_light_unit:hover,a.high_light_unit:active
 {
 background-color:#7A991A;
 }
-
-
-
-
-
-
 
 tr.lesson_creation>td
 {

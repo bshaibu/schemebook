@@ -23,7 +23,7 @@
 		<link href="units_list_layout.css" rel="stylesheet">
 		<!--End-->
 
-		<title>Schemebook | Page Title</title>
+		<title>Schemebook | New Lesson</title>
   	</head>
 
   	<body>
@@ -36,14 +36,14 @@
 	            <span class="icon-bar"></span>
 	            <span class="icon-bar"></span>
 	          </button>
-	          <a class="navbar-brand" href="#">Schemebook</a>
+	          <a class="navbar-brand" href="main_page.html">Schemebook</a>
 	        </div>
 	        <div class="collapse navbar-collapse">
-	          <ul class="nav navbar-nav">
-	            <li class="active"><a href="#">Home</a></li>
-	            <li><a href="#classes">My Classes</a></li>
-	           	<li><a href="#calendar">My Calendar</a></li>
-	           	<li><a href="#profile">My Profile</a></li>
+	          <ul class="nav navbar-nav navbar-right">
+	            <li class="active"><a href="main_page.html">Home</a></li>
+	            <li><a href="my_classes.html">My Classes</a></li>
+	           	<li><a href="calendar.html">My Calendar</a></li>
+	           	<li><a href="profile.html">My Profile</a></li>
 	          </ul>
 	        </div><!--/.nav-collapse -->
 	      </div>
@@ -52,7 +52,7 @@
 
 	    <div class="container" id="mainContainer">
 <!-- ******************* Replace This Stuff **************** -->
-            <div style="font-size:3em"><a>6.813</a>/Unit 1</div>
+            <div style="font-size:3em"><a href="units_list.html">6.813</a>/Unit 1</div>
 			
 	        <div >
 	          <ul class="units_nav_bar">
@@ -75,22 +75,22 @@
 				
 				<tr class="lesson_creation">
 					<td>Reading</td>
-					<td><input type="text" name="objective"></td>
+					<td><input type="text" name="reading" size="50"></td>
 				</tr>
 				
 				<tr class="lesson_creation">
 					<td>Lecture Notes</td>
-					<td><button type="button">Upload</button></td>
+					<td><input type="text" name="notes"><button type="button">Upload</button></td>
 				</tr>
 				
 				<tr class="lesson_creation">
 					<td>Quiz</td>
-					<td><button type="button">Upload</button></td>
+					<td><input type="text" name="quiz"><button type="button">Upload</button></td>
 				</tr>
 				
 				<tr class="lesson_creation">
 					<td>Lesson 1 Comments</td>
-					<td><input type="text" name="objective"></td>
+					<td><textarea rows="4" cols="70"></textarea></td>
 				</tr>
 				
 				<tr class="lesson_creation">
@@ -137,21 +137,7 @@
 					<td><button type="button">Save</button></td>
 			
             </table>
-			
-			
-		   
-		
-		
-		
-		
-		
-		
-		
-	    
-		
-		
-		
-    
+			   
 <!-- ****************** Replace The Above ********************* -->
     	</div><!--/container-->
 

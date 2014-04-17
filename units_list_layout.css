@@ -43,5 +43,27 @@ background-color:#7A991A;
 
 tr.lesson_creation>td
 {
+  padding-top: 1em;
   padding-bottom: 3em;
+  padding-left: 1em;
+  
 }
+
+
+
+
+
+
+
+
+
+
+
+ul#units_navigation_bar ul {
+	display: none;
+}
+
+	ul#units_navigation_bar li:hover > ul {
+		display: block;
+		left:100%;
+	}

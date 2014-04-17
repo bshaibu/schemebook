@@ -21,6 +21,17 @@
 		
 		<!--Tawanda added the stuff below-->
 		<link href="units_list_layout.css" rel="stylesheet">
+		
+		<script type="text/javascript">
+		    
+		    function addNewReading(){
+				var td=document.getElementById('add_new_reading_td');
+				var input = document.createElement("input");
+				input.type = "text";
+				td.insertBefore(input,td.childNodes[0]);
+				
+			}
+		</script>
 		<!--End-->
 
 		<title>Schemebook | Page Title</title>
@@ -52,7 +63,7 @@
 
 	    <div class="container" id="mainContainer">
 <!-- ******************* Replace This Stuff **************** -->
-            <div style="font-size:3em"><a>6.813</a>/Unit 1</div>
+            <div style="font-size:3em"><a href="units_list.html">6.813</a>/Unit 1</div>
 			
 	        <div >
 	          <ul class="units_nav_bar">
@@ -75,7 +86,10 @@
 				
 				<tr class="lesson_creation">
 					<td>Reading</td>
-					<td><input type="text" name="objective"></td>
+					<td id="add_new_reading_td">
+					    <input type="text" name="objective">
+						<img src="add_icon.png" alt="some_text" style="length:5%;width:5%" onClick="addNewReading()"> 
+					</td>
 				</tr>
 				
 				<tr class="lesson_creation">
@@ -90,7 +104,7 @@
 				
 				<tr class="lesson_creation">
 					<td>Lesson 1 Comments</td>
-					<td><input type="text" name="objective"></td>
+					<td><textarea rows="4" cols="70"></textarea></td>
 				</tr>
 				
 				<tr class="lesson_creation">

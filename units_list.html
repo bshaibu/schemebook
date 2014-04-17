@@ -29,12 +29,26 @@
 			
 			function addUnit(){
 			    var navigation_bar=document.getElementById("units_navigation_bar");
+				var nav_bar_childNodes=navigation_bar.childNodes;
+			    var num=nav_bar_childNodes.length-1
 				var new_tab=['<li class="units_nav_bar_items">',
-                                     '<a class="high_light_unit" href="#unit1">Unit 1</a>',
+                                     '<a class="high_light_unit" href="#unit1">Unit '+num+'</a>',
                              '</li>'
                             ].join('\n');
 				
 				navigation_bar.innerHTML=navigation_bar.innerHTML+new_tab;
+			}
+			
+			function checkUncheck(ele){
+			    if(ele.getAttribute('data-image-type')=="uncheck"){
+				    ele.src="check_mark_comp.png";
+					ele.setAttribute('data-image-type',"check");
+				}
+				
+				else{
+				    ele.src="check_mark.png"
+					ele.setAttribute('data-image-type',"uncheck");
+				}
 			}
 		
 		</script>
@@ -75,13 +89,7 @@
 			
 	        <div >
 	            <ul class="units_nav_bar" id="units_navigation_bar">
-	                <li class="units_nav_bar_items"><a class="high_light_unit" href="#unit1">Unit 1</a>
-					    <ul>
-				<li><a href="#">Photoshop</a></li>
-				<li><a href="#">Illustrator</a></li>
-				<li><a href="#">Web Design</a></li>
-			</ul></li>
-					
+	                <li class="units_nav_bar_items"><a class="high_light_unit" href="#unit1">Unit 1</a></li>
 			    </ul>
 	        </div><!--/.nav-collapse -->
 		
@@ -100,6 +108,34 @@
 				<th style="width:30%">Progress Comments</th>
 				<th style="width:10%">Check Progress</th>
 	        </tr>
+			
+			<tr>
+				<td>1:Usability</td>
+				<td>User Interface Hall of Fame/Shame. Introduce the Concept of Usability</td>		
+				<td>4/14/2014</td>
+				<td>The students really understood the lesson.</td>
+				<td >
+				    <img src="check_mark.png" alt="some_text" style="length:50%;width:50%" onClick="checkUncheck(this)" data-image-type="uncheck"> 
+			    </td>
+	        </tr>
+	        <tr>
+				<td>2:Learnability 1</td>
+				<td>User Interface Hall of Fame/Shame. Teach the first part of learnability</td>		
+				<td>4/16/2014</td>
+				<td>Students were a little confused today.</td>
+				<td >
+				    <img src="check_mark.png" alt="some_text" style="length:50%;width:50%" onClick="checkUncheck(this)" data-image-type="uncheck"> 
+			    </td>
+	        </tr>
+	        <tr>
+				<td>3:Learnability 2</td>
+				<td>User Interface Hall of Fame/Shame. Review Previous Lecture</td>		
+				<td>4/18/2014</td>
+				<td>Finally,the students got it:)</td>
+				<td >
+				    <img src="check_mark.png" alt="some_text" style="length:50%;width:50%" onClick="checkUncheck(this)" data-image-type="uncheck"> 
+			    </td>
+			</tr>
 	        
         </table>
 		

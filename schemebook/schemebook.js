@@ -10,7 +10,6 @@ Lesson: number, name, unit, objective, reading, lecture_notes, quiz, comments, s
 User: name, username, school, password,classes
 */
 
-
 if (Meteor.isClient) {
 	Template.classes.classes = function(){
 		return Classes.find({});

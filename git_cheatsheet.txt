@@ -1,0 +1,15 @@
+To Create a New Branch:
+git branch newBranchName
+git checkout newBranchName
+
+To Commit Changes
+git commit -am 'change message'
+git pull
+git push
+
+To Switch to the Master Branch:
+git checkout master
+
+To Merge Changes from Branch:
+git checkout master
+git merge newBranchName

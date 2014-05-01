@@ -3,6 +3,7 @@ git branch newBranchName
 git checkout newBranchName
 
 To Commit Changes
+git add .
 git commit -am 'change message'
 git pull
 git push
@@ -13,3 +14,7 @@ git checkout master
 To Merge Changes from Branch:
 git checkout master
 git merge newBranchName
+
+Always pull before you push.
+Try to work on major changes in a feature branch like "ClassesPage" and after you're done with it,
+merge it with master.

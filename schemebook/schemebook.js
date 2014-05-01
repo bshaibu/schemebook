@@ -12,7 +12,7 @@ User: name, username, school, password,classes
 
 
 if (Meteor.isClient) {
-	Template.classes.all = function(){
+	Template.classes.classes = function(){
 		return Classes.find({});
   	};
 

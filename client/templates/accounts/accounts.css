@@ -1,3 +1,10 @@
+.accounts-body {
+  padding-top: 10em;
+  padding-bottom: 10em;
+  padding-left: 5em;
+  padding-right: 5em;
+}
+
 .form-signin {
   max-width: 330px;
   padding: 15px;

@@ -7,5 +7,7 @@ if (Meteor.isClient) {
     this.route('lesson');
     this.route('profile');
     this.route('calendar');
+    this.route('login');
+    this.route('register');
   });
 }

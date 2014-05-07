@@ -1,13 +1,14 @@
 <head>
-  <title>schemebook</title>
+	<!-- TODO: make title render per page -->
+  <title>Schemebook</title>
 </head>
 
 <body>
-  {{> hello}}
+	{{>menubar}}
+	<div id="main" class="container-fluid">
+	    <div class="row-fluid">	
+	        {{renderPage}}
+	    </div>
+	</div>
+	{{>footer}}
 </body>
-
-<template name="hello">
-  <h1>Hello World!</h1>
-  {{greeting}}
-  <input type="button" value="Click" />
-</template>

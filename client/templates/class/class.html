@@ -1,3 +1,108 @@
 <template name="class">
-	Class
+	<div style="font-size:3em">{{name}}</div>
+			<!--/*	Database Schema
+Class: name, teacher, school, units
+Unit: name, number, class, lessons
+Lesson: number, name, unit, objective, reading, lecture_notes, quiz, comments, scheduled_date
+User: name, username, school, password,classes
+*/-->
+	        <div >
+	            {{#each units}}
+	            <ul class="units_nav_bar" id="units_navigation_bar">
+	                <li class="units_nav_bar_items">
+	                	<a class="high_light_unit" href="#unit1">{{number}}:{{name}}</a>
+	                </li>
+			    </ul>
+			    {{/each}}
+	        </div><!--/.nav-collapse -->
+	        
+		    <table border="2" style="width:100%">
+		        <tr>
+					<th style="width:10%">Lesson</th>
+					<th style="width:30%">Objective</th>		
+					<th style="width:20%">Date</th>
+					<th style="width:30%">Progress Comments</th>
+					<th style="width:10%">Check Progress</th>
+		        </tr>
+				{{>selected_unit}}
+	        </table>
+		
+		
+		    <br>
+		
+			<div id="new_lesson">
+			    <button id="create_lesson_btn" type="button" onClick="openLessonsPage()">Create New Lesson</button>
+	        </div>
+		
+		    <br>
+		
+			<div class="row">
+	            <div class="col-lg-4">
+			        <button type="button" >Merge Lessons</button>
+	            </div><!-- .span4-->
+	   
+	            <div class="col-lg-4">
+			        <button type="button" >Catch Me Up</button>
+	            </div><!-- .span4 -->
+	   
+	            <div class="col-lg-4">
+			        <button type="button" >Delete Lesson</button>
+	            </div><!-- .span4 -->
+	        </div><!-- .row -->
+		
+		    <br>
+		
+			<div class="row">
+			    <div class="col-lg-2">
+			        Supervisor<br>Comment
+	            </div><!-- .span2 -->   
+				
+				<div class="col-lg-8">
+	                <textarea rows="4" cols="110">
+	                </textarea>
+
+			        <!--<input type="text" name="SupervisorComment" value="SV"><br>-->
+	            </div><!-- .span8 --> 
+			</div><!-- .row -->
+		
+		    <br>
+		
+		
+			<div class="row">
+	            <div class="col-lg-4">
+			        <button type="button" >Delete Unit</button>
+	            </div><!-- .span4 -->
+	   
+	            <div class="col-lg-4">
+			        <button type="button" >Save</button>
+	            </div><!-- .span4 -->
+	   
+	            <div class="col-lg-4">
+			        <button type="button" onClick="addUnit()">Add Another Unit</button>
+	            </div><!-- .span4 -->
+	        </div><!-- .row --> 
+</template>
+
+<template name="selected_unit">
+    {{#each lesson}}
+	<!-- <tr>
+		<td>1:Usability</td>
+		<td>User Interface Hall of Fame/Shame. Introduce the Concept of Usability</td>		
+		<td>4/14/2014</td>
+		<td>The students really understood the lesson.</td>
+		<td >
+		    <img src="check_mark.png" alt="some_text" style="length:50%;width:50%" onClick="checkUncheck(this)" data-image-type="uncheck"> 
+	    </td>
+    </tr> -->
+    Lessons: number, name, unit, objective, reading, lecture_notes, quiz, comments, scheduled_date
+    <tr>
+		<td>{{number}}:{{name}}</td>
+		<td>{{objective}}</td>		
+		<td>{{scheduled_date}}</td>
+		<td>{{progress_comments}}</td>
+		<td >
+		    <img src="check_mark.png" alt="some_text" style="length:50%;width:50%" onClick="checkUncheck(this)" data-image-type="uncheck"> 
+	    </td>
+    </tr>
+    {{/each}}
 </template>

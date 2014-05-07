@@ -9,3 +9,5 @@ insecure
 jquery
 bootstrap
 iron-router
+accounts-base
+accounts-password

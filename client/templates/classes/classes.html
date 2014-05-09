@@ -19,9 +19,34 @@
 			</table>
 		</div>		
 		<div class="container" id="new_classes" >
-			<div class="container" id="modal_container">
-				<a class="btn" data-toggle="modal hide fade" href="#myModal" id="modal_toggler" >New Class</a>
-				<div class="modal hide fade" id="myModal">
+		<a class="btn btn-primary" data-toggle="modal" href='#modal-id' id="modal_toggler">New Class</a>
+		<div class="modal fade" id="modal-id" tabindex="-1">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						<h4 class="modal-title">Create A Class</h4>
+					</div>
+					<div class="modal-body">
+						<label >Class Name</label><br>
+							<input id="classname" type="text" placeholder="class name.."><br>
+						<label id="">Grade</label><br>
+							<input id="grade" type="text" placeholder=""><br>
+						<label id="">School</label><br>
+
+						    <input id="school" type="text" placeholder="name of school">		
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary" id="save_data">Save changes</button>
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+			<!--div class="container" id="modal_container">
+				<a class="btn" data-toggle="modal hide fade" href="#myModal" data-keyboard="true" id="modal_toggler" >New Class</a>
+				<div class="modal hide fade" id="myModal" tabindex="-1">
 					<div class="modal-header">
 						<a class="close" data-dismiss="modal">&times;</a>
 						
@@ -43,7 +68,7 @@
 				</div>
 			
 				
-			</div>
+			</div-->
 		</div>
 	</div>
 </template>

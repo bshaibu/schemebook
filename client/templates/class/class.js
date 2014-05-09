@@ -23,7 +23,7 @@ Template.class.units=function() {
 
 Template.class.events({
 	'click #create_lesson_btn':function() {
-		Router.go("lesson");
+		Router.go("/class/newlesson");
 	},
 
 	'click #delete_lesson_btn':function() {

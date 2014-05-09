@@ -21,7 +21,15 @@ if (Meteor.isClient) {
         //Session.set("selected_unit",lessonnumber);
         return lesson;
       }
-    })
+    });
+
+    this.route('createlesson',{
+      path:'/class/newlesson',
+      action:function(){
+        this.render('lesson');
+
+      }
+    });
 
     this.route('notFound', {path: "*"});
   });

@@ -40,14 +40,9 @@ var okCancelEvents = function (selector, callbacks) {
 
 //this functions returns the list of all classes
 Template.classes.class=function(){
-<<<<<<< HEAD
-	
- return Classes.find({});
-}
-=======
 	return Classes.find({});
 };
->>>>>>> a6fc3f7c740e11483f4ad8cadb298101fbdc6923
+
 
 
 Template.classes.events({

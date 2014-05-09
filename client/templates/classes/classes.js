@@ -48,12 +48,12 @@ Template.classes.events({
    
       
       Classes.insert({classname:classname,grade:gra,school:sch});
-      alert("classes called");
+    
       
    
     },
     "click #modal_toggler":function(){
-      $("#myModal").modal('show');
+      $("#modal-id").modal('show');
     },
     "click #row":function(){
 
@@ -74,6 +74,6 @@ var clearValues=function(){
   $("#classname").val("");
   $("#grade").val("");
   $("#school").val("");  
-  $("#modal").modal('hide');
+  $("#modal-id").modal('hide');
   
 }

@@ -1,7 +1,11 @@
 if (Meteor.isClient) {
   //Routing
   Router.map(function() {
+    //Routes to Home
     this.route('home', {path: '/'});
+    this.route('home', {path: 'home'});
+    this.route('home', {path: 'index'});
+
     this.route('class');
     this.route('classes');
     

@@ -57,7 +57,7 @@ Template.register.events({
                                     profile: {
                                         name: name,
                                         email: email,
-                                        url: ''}
+                                        pic_url: ''}
         };
 
         // Trim and validate the input

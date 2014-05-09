@@ -15,7 +15,7 @@ var loadCalendar = function() {
     });
 };
 
-Template.calendar.rendered = function(){
+Template.home.rendered = function(){
         loadCalendar();
         console.log('foobar');
 };

@@ -1,4 +1,4 @@
-var loadCalendar = function() {
+var loadSmallCalendar = function() {
     $('#calendar').fullCalendar({
         // Options and Callbacks 
         weekends: true,
@@ -8,14 +8,13 @@ var loadCalendar = function() {
         weekMode: 'liquid',
         aspectRatio: 2.1,
         header: {
-            left:   'today prev,next',
-            center: 'title',
-            right:  'month,agendaWeek,agendaDay'
+            right:   'today prev,next',
+            left: 'title',
         }
     });
 };
 
-Template.home.rendered = function(){
-        loadCalendar();
+Template.landing.rendered = function(){
+        loadSmallCalendar();
         console.log('foobar');
 };

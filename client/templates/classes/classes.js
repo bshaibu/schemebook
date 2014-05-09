@@ -1,4 +1,5 @@
 Session.setDefault("record", 0);
+Session.setDefault("selected_class_id",null);
 
 Meteor.autorun(function(){
   Meteor.subscribe("klasses",Session.get("record"));
@@ -86,7 +87,11 @@ Template.classes.events({
 Template.the_class.events({
   'click':function(){
     console.log(this._id,this.classname,this.school);
-    Router.go("class");
+    
+    
+    /////Router.go("class");
+    Session.set("selected_class_id",this._id);
+    Router.go("/"+this._id);///rep
   }
 })
 

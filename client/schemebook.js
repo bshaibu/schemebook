@@ -12,11 +12,21 @@ if (Meteor.isClient) {
         this.route('calendar');
 
         this.route('classes');
-
+         
         this.route('login');
         this.route('register');
 
         //TZ 
+        this.route('class',{
+            path: '/:class_id',
+            data: function() {
+                console.log(this.params.class_id,"test");
+                console.log(Classes.findOne({_id:this.params.class_id}));
+                return Classes.findOne({_id:this.params.class_id});
+            }
+        });
+
+
         this.route('lesson',{
             path: '/class/:unitnumber/:lessonnumber',
             data: function(){

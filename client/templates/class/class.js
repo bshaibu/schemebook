@@ -16,8 +16,10 @@ Template.class.rendered=function() {
 
 };
 
+
 Template.class.units=function() {
-    return Units.find({});
+    var selectedClassId=Session.get("selected_class_id");
+    return Units.find({class_id:selectedClassId});
 };
 
 

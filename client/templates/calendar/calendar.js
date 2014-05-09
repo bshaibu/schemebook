@@ -6,7 +6,7 @@ var loadCalendar = function() {
         alert('The calendar has adjusted to a window resize');
         },
         weekMode: 'liquid',
-        aspectRatio: 2,
+        aspectRatio: 2.1,
         header: {
             left:   'today prev,next',
             center: 'title',

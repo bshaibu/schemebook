@@ -6,9 +6,13 @@ if (Meteor.isServer) {
         //Add Dummy Data
         if (Meteor.users.find().count() === 0) {
             console.log("no users buckaroo");
+            Accounts.createUser({   email: "fake@mit.edu",
+                                    password : "password",
+                                    firstName: "Dummy",
+                                    lastName: "User"
+            });
         }
         if (Classes.find().count() === 0) {
-
             Classes.insert({name: "6.813", teacher: "Rob Miller", school: "MIT", units:"1"});
         }
         if (Units.find().count() === 0) {

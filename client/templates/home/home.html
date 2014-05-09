@@ -1,19 +1,4 @@
 <template name="home">
-
-	<div class="container" id="main">
-		{{#if currentUser}}
-		
-			
-		{{else}}
-		    <!-- Main jumbotron for a primary marketing message or call to action -->
-		    <div class="jumbotron">
-		        <h1>Welcome!</h1>
-		        <p>This is Schemebook, a tool that allows teachers to easily create and manage their lesson plans. What are you waiting for? Get scheming today! </p>
-		    	<p><a href="/register" class="btn btn-primary btn-lg" role="button"> Sign Up</a></p>
-		    </div>
-		{{/if}}
-	</div><!--/container-->
-
     <div class="container" id="main">
         {{#if currentUser}}
             {{>landing}}
@@ -57,5 +42,4 @@
                 <p>This is Schemebook, a tool that allows teachers to easily create and manage their lesson plans. What are you waiting for? Get scheming today! </p>
                 <p><a href="/register" class="btn btn-primary btn-lg" role="button"> Sign Up</a></p>
             </div>
-
 </template>

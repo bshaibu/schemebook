@@ -10,7 +10,10 @@ var loadSmallCalendar = function() {
         header: {
             right:   'today prev,next',
             left: 'title',
-        }
+        },
+        events: dummyEvents,
+        color: 'yellow',   // an option!
+        textColor: 'black' // an option!
     });
 };
 
@@ -18,3 +21,14 @@ Template.landing.rendered = function(){
         loadSmallCalendar();
         console.log('foobar');
 };
+
+var dummyEvents = [
+            {
+                title: 'Learnability 1',
+                start: '2014-05-12'
+            },
+            {
+                title: 'Learnability 2',
+                start: '2014-05-14'
+            }
+        ];

@@ -12,7 +12,9 @@ var loadCalendar = function() {
             center: 'title',
             right:  'month,agendaWeek,agendaDay'
         },
-        events: loadEvents
+        events: dummyEvents,       
+        color: 'yellow',   // an option!
+        textColor: 'black' // an option!, end, callback
     });
 };
 
@@ -40,3 +42,14 @@ var loadEvents = function(start, end, callback) {
 
     callback(events);
 };
+
+var dummyEvents = [
+            {
+                title: 'Learnability 1',
+                start: '2014-05-12'
+            },
+            {
+                title: 'Learnability 2',
+                start: '2014-05-14'
+            }
+        ];

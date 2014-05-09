@@ -1,4 +1,4 @@
-* 	Add Calendar Events: http://stackoverflow.com/questions/14805189/how-to-keep-data-reactive-when-creating-an-array-from-a-collection
+* 	----Add Calendar Events: http://stackoverflow.com/questions/14805189/how-to-keep-data-reactive-when-creating-an-array-from-a-collection
 *	Create Fixtures
 *	Undo Delete
 *	Bootstrap Buttons Everywhere
@@ -8,7 +8,7 @@
 * 	Add Validations Helpers/Add Form Validation Warnings
 *	Make Main Page Programmatic
 *	Programmatic Username in Navbar
-*	Update Profile Page Buttons (Image and Password)
+*	---Update Profile Page Buttons (Image and Password)
 *	Remove all console.log
 *	Add Search Page
 *	Add Page Hooks

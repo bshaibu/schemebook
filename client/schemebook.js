@@ -4,7 +4,7 @@ if (Meteor.isClient) {
     this.route('home', {path: '/'});
     this.route('class');
     this.route('classes');
-    //this.route('lesson');
+    
     this.route('profile');
     this.route('calendar');
 
@@ -17,16 +17,32 @@ if (Meteor.isClient) {
     //TZ 
     this.route('lesson',{
       path:'/class/:unitnumber/:lessonnumber',
+
       data:function(){
-        unitnumber=parseInt(this.params.unitnumber);
-        lessonnumber=parseInt(this.params.lessonnumber);
-        lesson=Lessons.findOne({unit:unitnumber,number:lessonnumber});
+        unitnumber = parseInt(this.params.unitnumber);
+        lessonnumber = parseInt(this.params.lessonnumber);
+        lesson = Lessons.findOne({unit:unitnumber,number:lessonnumber});
         //Session.set("selected_unit",lessonnumber);
         return lesson;
       }
-    })
+    });
 
+    this.route('createlesson',{
+      path:'/class/newlesson',
+
+      action:function(){
+        this.render('lesson');
+
+      }
+    });
+
+    //Requested Page Not Found
     this.route('notFound', {path: "*"});
+
+    //Start Up Functions
+    Meteor.startup(function () {
+      //pass
+    });
 
   });
 }

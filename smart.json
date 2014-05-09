@@ -1,8 +1,8 @@
 {
   "packages": {
     "iron-router": {},
-    "moment": {},
-    "jqbootstrapvalidation": {},
-    "bootstrap-3": {}
+    "bootstrap-3": {},
+    "fullcalendar": {},
+    "bootstrap3-datetimepicker": {}
   }
 }

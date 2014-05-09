@@ -4,8 +4,9 @@ Template.lesson.rendered=function() {
 		
 		var lessonInfo=Lessons.findOne({_id:Session.get("lesson_item_selected_id")})
 		//console.log(lessonInfo.name,"lessonName");
-    	$("#lesson_name").val(lessonInfo.name);
+    	//$("#lesson_name").val(lessonInfo.name);
     	$("#objective").val(lessonInfo.objective);
+    	console.log(lessonInfo);
 
     	var month=lessonInfo.schedule_date.month;
     	var day=lessonInfo.schedule_date.day;
@@ -49,7 +50,11 @@ Template.lesson.events({
         	return;
         }
 
-	       
+	    if(lessonMonth=="Month" || lessonDay=="Day" || lessonYear=="Year"){
+	    	alert("Provide date of lession");
+	    	return;
+	    }
+
     	Lessons.update({_id:Session.get("lesson_item_selected_id")},
     	           {name:lessonName,
 	    	           number:lessonNumber,

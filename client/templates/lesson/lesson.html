@@ -12,12 +12,14 @@
 		<table  frame="box" style="width:100%">
 			<tr class="lesson_creation">
 				<td style="width:30%">Lesson Name</td>
-				<td><input type="text" name="lesson_name" id="lesson_name"></td>
+				<td>
+					<input type="text" name="lesson_name" id="lesson_name" value="{{name}}">
+				</td>
 			</tr>
 			
 			<tr class="lesson_creation">
 				<td>Objective</td>
-				<td><textarea rows="4" cols="70" id="objective"></textarea></td>
+				<td><textarea rows="4" cols="70" id="objective">{{objective}}</textarea></td>
 			</tr>
 			
 			<tr class="lesson_creation">

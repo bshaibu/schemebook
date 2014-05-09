@@ -6,10 +6,10 @@ if (Meteor.isServer) {
         //Add Dummy Data
         if (Meteor.users.find().count() === 0) {
             console.log("no users buckaroo");
-            Accounts.createUser({   email: "fake@mit.edu",
+            Accounts.createUser({   username: "someUserName",
+                                    email: "anemail@email.com",
                                     password : "password",
-                                    firstName: "Dummy",
-                                    lastName: "User"
+                                    profile: {  name: "Dummy User"}
             });
         }
         if (Classes.find().count() === 0) {

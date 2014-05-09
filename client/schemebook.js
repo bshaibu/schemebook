@@ -72,23 +72,6 @@ this.routte('notFound', {
 
 */
 
-
-//Globalish Helpers
-//Display A Bootstrap Error message
-var messageAlert = function (message, type) {
-    var types = {
-        "success": '<div class="alert alert-success"></div>',
-        "info": '<div class="alert alert-info">...</div>',
-        "warning": '<div class="alert alert-warning">...</div>',
-        "danger": '<div class="alert alert-danger">...</div>'
-    };
-    var dismissButton = '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>';
-    var alert = $(types[type]);
-    alert.append(dismissButton).append(message);
-    $("#main").prepend(alert);
-}
-
-
 //Utilities
 // Credit to cmather, https://github.com/EventedMind/iron-router/issues/82
 //Credit to CodeWall, https://coderwall.com/p/ahlrua

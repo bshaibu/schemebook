@@ -35,25 +35,27 @@ Template.register.events({
         var email = tmpl.find('#account-email').value,
             password = tmpl.find('#account-password').value,
             confirmation = tmpl.find('#account-confirm-password').value,
-            firstName = tmpl.find('#account-first-name').value,
-            lastName = tmpl.find('#account-last-name').value;
+            username = tmpl.find('#account-user-name').value,
+            name = tmpl.find('#account-full-name').value;
 
         // Trim and validate the input
         email = trimInput(email);
 
-        if ( isValidPassword(password) && areMatchingPasswords(password, confirm) ) {
-            Accounts.createUser({   email: email,
+        if ( isValidPassword(password) && areMatchingPasswords(password, confirmation) ) {
+            Accounts.createUser({   username: username,
+                                    email: email,
                                     password : password,
-                                    firstName: firstName,
-                                    lastName: lastName},
+                                    profile: {  name: name}},
                 function(err){
                     if (err) {
                         // Inform the user that account creation failed
-                        Session.set('displayMessage', 'Failed to Log In');
+                        Session.set('displayMessage', 'Failed to Create');
                     }
                     else {
                         // Success. Account has been created and the user
                         // has logged in successfully. 
+                        console.log("success");
+                        Router.go('/');
                     }
             });
         }
@@ -98,4 +100,17 @@ var areMatchingPasswords = function(pass, confirm) {
         Session.set('displayMessage', "Error: Passwords don't match.");
         return false;
     }
+};
+//Display A Bootstrap Error message
+var messageAlert = function (message, type) {
+    var types = {
+        "success": '<div class="alert alert-success"></div>',
+        "info": '<div class="alert alert-info">...</div>',
+        "warning": '<div class="alert alert-warning">...</div>',
+        "danger": '<div class="alert alert-danger">...</div>'
+    };
+    var dismissButton = '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>';
+    var alert = $(types[type]);
+    alert.append(dismissButton).append(message);
+    $("#main").prepend(alert);
 };

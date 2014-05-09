@@ -2,3 +2,4 @@
 * 	Create Footer
 * 	Create Menu Bar
 * 	Add Validations Helpers
+*	Choose Color for Site

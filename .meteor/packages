@@ -10,7 +10,5 @@ jquery
 iron-router
 accounts-base
 accounts-password
-moment
-jqbootstrapvalidation
-#bootstrap-3
 bootstrap-3
+fullcalendar

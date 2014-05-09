@@ -5,9 +5,15 @@
 
 <body>
 	<header>
-    	{{>menubar}}
+		{{#if currentUser}}
+    		{{>menubar}}
+    	{{else}}
+    		{{>menubarGUEST}}
+    	{{/if}}
     </header>
+
     {{renderPage}}    
+    
     <footer>
         {{>footer}}
     </footer>

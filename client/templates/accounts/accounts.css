@@ -1,15 +1,20 @@
 .accounts-body {
-  padding-top: 10em;
-  padding-bottom: 10em;
-  padding-left: 5em;
-  padding-right: 5em;
+  padding-left: auto;
+  padding-right: auto;
 }
 
 .form-signin {
   max-width: 330px;
   padding: 15px;
   margin: 0 auto;
+  font-size: 1.2em;
 }
+
+.form-signin-heading {
+    font-size: 2em;
+    padding-bottom: 0.4em;
+}
+
 .form-signin .form-signin-heading,
 .form-signin .checkbox {
   margin-bottom: 10px;

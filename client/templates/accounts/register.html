@@ -1,10 +1,18 @@
 <template name="register">
-    <div class="accounts-body">
+    <div class="accounts-body container">
         <form class="form-signin" role="form" id="register-form">
             <h2 class="form-signin-heading">Register</h2>
             <div>
-                <input type="email" id="account-email" class="form-control" placeholder="Email address" required autofocus>
-                <input type="password" id="account-password" class="form-control" placeholder="Password" required>      
+                User Name
+                <input type="text" id="account-user-name" class="form-control" placeholder="User Name" required autofocus>
+                Name
+                <input type="text" id="account-full-name" class="form-control" placeholder="Full Name" required autofocus>
+                Email
+                <input type="email" id="account-email" class="form-control" placeholder="Email address" required>
+                Password
+                <input type="password" id="account-password" class="form-control" placeholder="Password" required>
+                Confirm Password
+                <input type="password" id="account-confirm-password" class="form-control" placeholder="Confirm Password" required>
                 <button class="btn btn-lg btn-primary btn-block" type="submit" id="create-account">Create an Account</button>
              </div>
         </form>

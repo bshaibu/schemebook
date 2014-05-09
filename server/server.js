@@ -6,9 +6,13 @@ if (Meteor.isServer) {
         //Add Dummy Data
         if (Meteor.users.find().count() === 0) {
             console.log("no users buckaroo");
+            Accounts.createUser({   username: "someUserName",
+                                    email: "anemail@email.com",
+                                    password : "password",
+                                    profile: {  name: "Dummy User"}
+            });
         }
         if (Classes.find().count() === 0) {
-
             Classes.insert({name: "6.813", teacher: "Rob Miller", school: "MIT", units:"1"});
         }
         if (Units.find().count() === 0) {
@@ -29,3 +33,7 @@ if (Meteor.isServer) {
         }
   });
 }
+
+Meteor.publish("klasses",function(xum){
+	return Classes.find({},{limit:10,skip:xum});
+});

@@ -1,40 +1,59 @@
 <template name="menubar">
-    <div class="navbar navbar-inverse navbar-static-top" role="navigation">
+    <div class="navbar navbar-default navbar-static-top" role="navigation">
         <div class="container">
             <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <a class="navbar-brand" href="{{pathFor 'home'}}">Schemebook</a>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>x 
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="{{pathFor 'home'}}">Schemebook</a>
             </div>
-            <div class="collapse navbar-collapse">
-              <ul class="nav navbar-nav navbar-right">
-                <li><a href="{{pathFor 'home'}}">Home</a></li>
-                <li class="active"><a href="{{pathFor 'classes'}}">My Classes</a></li>
-                <li><a href="{{pathFor 'calendar'}}">My Calendar</a></li>
-                <li><a href="{{pathFor 'profile'}}">My Profile</a></li>
-              </ul>
+            <div class="collapse navbar-collapse navbar-responsive-collapse">
+                <ul class="nav navbar-nav navbar-left">
+                    <li class="{{active '/'}}"><a href="{{pathFor 'home'}}">Home</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="{{active '/classes'}}"><a href="{{pathFor 'classes'}}">Classes</a></li>
+                    <li class="{{active '/calendar'}}"><a href="{{pathFor 'calendar'}}">Calendar</a></li>
+
+                    <li class="dropdown {{active '/profile'}}">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"> 
+                            Profile <b class="caret"></b>
+                        </a>
+                      
+                        <ul class="dropdown-menu">
+                            <li><a href="{{pathFor 'profile'}}">Profile</a></li>
+                            <li><a href="#" id="logout-button">Logout</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
             </div><!--/.nav-collapse -->
-            </div>
+        </div>
     </div><!--/navbar-->
 </template>
 
 
 <template name="menubarGUEST">
-    <div class="navbar navbar-inverse navbar-static-top" role="navigation">
+    <div class="navbar navbar-default navbar-static-top" role="navigation">
         <div class="container">
             <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <a class="navbar-brand" href="{{pathFor 'home'}}">Schemebook</a>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>x 
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="{{pathFor 'home'}}">Schemebook</a>
             </div>
-            </div>
+            <div class="collapse navbar-collapse navbar-responsive-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="{{active '/login'}}"><a href="{{pathFor 'login'}}">Log In</a></li>
+                    <li class="{{active '/register'}}"><a href="{{pathFor 'register'}}">Sign Up</a></li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
     </div><!--/navbar-->
 </template>

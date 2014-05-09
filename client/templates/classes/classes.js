@@ -1,3 +1,10 @@
+Session.setDefault("record", 0);
+
+Meteor.autorun(function(){
+  Meteor.subscribe("klasses",Session.get("record"));
+});
+
+
 ////////// Helpers for in-place editing //////////
 
 // Returns an event map that handles the "escape" and "return" keys and
@@ -46,8 +53,11 @@ Template.classes.events({
       console.log("contents in the database"+Classes.find().count());
       
    
-      
+    var len=classname.length;
+    if(len>0){      
       Classes.insert({classname:classname,grade:gra,school:sch});
+    }
+    clearValues();
     
       
    
@@ -55,10 +65,21 @@ Template.classes.events({
     "click #modal_toggler":function(){
       $("#modal-id").modal('show');
     },
-    "click #row":function(){
+    'click #pg_left':function(evt,tml){
+   
+      if(Number(Session.get('record'))>9){
 
+        Session.set("record",Number(Session.get('record'))-10);
+      }
+
+    },
+     'click #pg_right':function(evt,tml){
+        
+        Session.set("record",Number(Session.get('record'))+10);
+      
 
     }
+
   
 });
 

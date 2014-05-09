@@ -1,10 +1,10 @@
 /* CSS declarations go here */
 body {
-    background-color: #eee;
 }
 
 #main {
 	/*margin to avoid footer*/
 	/* margin-bottom: 2.5em;*/
-	margin-top: 0.5em;
+	margin-top: 1em;
+	margin-bottom: 1em;
 }

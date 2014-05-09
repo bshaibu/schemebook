@@ -12,7 +12,7 @@ Template.class.rendered=function() {
     Session.set("lesson_item_selected_id",null);
     Session.set("lesson_item_selected_num",null);
     //Session.set("lesson_of_selected_checkbok",null);
-    checked_lessons=[];
+    checked_lessons=[];//////
 
 };
 
@@ -26,6 +26,37 @@ Template.class.events({
         Router.go("/class/newlesson");
     },
 
+//<<<<<<< HEAD
+	'click #delete_lesson_btn':function() {
+		//lesson_doc=Session.get("lesson_of_selected_checkbok");//document to be deletede
+		for(var i=0;i<checked_lessons.length;i++){
+			Lessons.remove(checked_lessons[i]._id);
+		}
+
+		if(checked_lessons.length==0){
+			$('#select-all-checkboxes').prop('checked', true);
+		}
+	},
+
+	'change #select-all-checkboxes':function(evt) {
+		if(evt.currentTarget.checked){
+			$('.checkbox').prop('checked', true);
+			numOfSelectedUnit=Session.get("selected_unit");
+
+			checked_lessons=Lessons.find({
+				unit:numOfSelectedUnit},
+				{_id:1}).map(function(item){
+				 return item;
+				});
+
+	    }
+
+	    else{
+	    	$('.checkbox').prop('checked', false);
+	    	checked_lessons=[];
+	    }
+	}
+/*=======
     'click #delete_lesson_btn':function() {
         //lesson_doc=Session.get("lesson_of_selected_checkbok");//document to be deletede
         for(var i=0;i<checked_lessons.length;i++){
@@ -42,6 +73,7 @@ Template.class.events({
             $('.checkbox').prop('checked', false);
         }
     }
+>>>>>>> 5cca4e6a66a4f731d094312de3332e8e7e30875e*/
 });
 
 Template.selected_unit.lesson=function() {
@@ -58,12 +90,29 @@ Template.selected_unit_lesson.events({
         Router.go("/class/"+this.unit+"/"+this.number);
     },
 
+//<<<<<<< HEAD
+	'change .checkbox' :function(evt){
+		console.log("hosa");
+		if(evt.currentTarget.checked){
+  			//Session.set("lesson_of_selected_checkbok",this);
+  			checked_lessons.push(this);
+  			numOfSelectedUnit=Session.get("selected_unit");
+  			lessonsInSelectedUnit=Lessons.find({unit:numOfSelectedUnit}).count();
+            
+            console.log(lessonsInSelectedUnit);
+            console.log(checked_lessons.length);
+  			if(checked_lessons.length==lessonsInSelectedUnit){
+  				$('#select-all-checkboxes').prop('checked', true);
+  			}
+		}
+/*=======
     'change .checkbox' :function(evt){
         console.log("hosa");
         if(evt.currentTarget.checked){
             //Session.set("lesson_of_selected_checkbok",this);
             checked_lessons.push(this);
         }
+>>>>>>> 5cca4e6a66a4f731d094312de3332e8e7e30875e*/
 
         else{
             index=checked_lessons.indexOf(this);

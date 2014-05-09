@@ -19,6 +19,11 @@ Template.class.rendered=function() {
 
 Template.class.units=function() {
     var selectedClassId=Session.get("selected_class_id");
+    console.log("Template.class.units");
+    console.log(selectedClassId,"selectedClassId");
+    console.log(Units.find({class_id:selectedClassId}));
+    console.log(Units.find({}, {_id:1}).map(function(item){ return item._id; }));
+    console.log("\n");
     return Units.find({class_id:selectedClassId});
 };
 

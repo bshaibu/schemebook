@@ -6,7 +6,7 @@ if (Meteor.isClient) {
         this.route('home', {path: 'index'});
         this.route('home', {path: '/'});
 
-        this.route('class');
+        //this.route('class');
         this.route('classes');
         this.route('profile');
         this.route('calendar');

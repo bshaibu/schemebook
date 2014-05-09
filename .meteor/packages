@@ -12,4 +12,5 @@ accounts-base
 accounts-password
 moment
 jqbootstrapvalidation
+#bootstrap-3
 bootstrap-3

@@ -1,10 +1,10 @@
 <template name="class">
-<<<<<<< HEAD
+<!-- <<<<<<< HEAD
 	
 	
 	
 		
-=======
+======= -->
 	<div style="font-size:3em">{{name}}</div>
 			<!--/*	Database Schema
 Class: name, teacher, school, units
@@ -60,7 +60,9 @@ User: name, username, school, password,classes
         </td>
 		<td class="lesson-name-td">{{number}}:{{name}}</td>
 		<td class="objective-td">{{objective}}</td>		
-		<td class="lesson-date-td">{{schedule_date}}</td>
+		<td class="lesson-date-td">
+		{{schedule_date.month}} {{schedule_date.day}} {{schedule_date.year}}
+		</td>
 		<td class="comments-td">Null now</td>
 		<td class="progress-check-td">
 		    <img src="/pictures/check_mark.png" alt="some_text" style="length:50%;width:50%" onClick="checkUncheck(this)" data-image-type="uncheck"> 
@@ -74,5 +76,5 @@ User: name, username, school, password,classes
         	<a class="high_light_unit" href="#unit{{number}}">{{number}}:{{name}}</a>
         </li>
 	</ul>
->>>>>>> 4602a01472e4118ea3f0f148785c04302b10e9db
+<!-- >>>>>>> 4602a01472e4118ea3f0f148785c04302b10e9db -->
 </template>

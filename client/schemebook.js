@@ -17,6 +17,7 @@ if (Meteor.isClient) {
     //TZ 
     this.route('lesson',{
       path:'/class/:unitnumber/:lessonnumber',
+
       data:function(){
         unitnumber=parseInt(this.params.unitnumber);
         lessonnumber=parseInt(this.params.lessonnumber);
@@ -28,6 +29,7 @@ if (Meteor.isClient) {
 
     this.route('createlesson',{
       path:'/class/newlesson',
+
       action:function(){
         this.render('lesson');
 

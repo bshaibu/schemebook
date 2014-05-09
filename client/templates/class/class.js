@@ -12,7 +12,7 @@ Template.class.rendered=function() {
     Session.set("lesson_item_selected_id",null);
     Session.set("lesson_item_selected_num",null);
     //Session.set("lesson_of_selected_checkbok",null);
-    checked_lessons=[];
+    checked_lessons=[];//////
 
 };
 
@@ -31,15 +31,28 @@ Template.class.events({
 		for(var i=0;i<checked_lessons.length;i++){
 			Lessons.remove(checked_lessons[i]._id);
 		}
+
+		if(checked_lessons.length==0){
+			$('#select-all-checkboxes').prop('checked', true);
+		}
 	},
 
 	'change #select-all-checkboxes':function(evt) {
 		if(evt.currentTarget.checked){
 			$('.checkbox').prop('checked', true);
+			numOfSelectedUnit=Session.get("selected_unit");
+
+			checked_lessons=Lessons.find({
+				unit:numOfSelectedUnit},
+				{_id:1}).map(function(item){
+				 return item;
+				});
+
 	    }
 
 	    else{
 	    	$('.checkbox').prop('checked', false);
+	    	checked_lessons=[];
 	    }
 	}
 });
@@ -63,6 +76,14 @@ Template.selected_unit_lesson.events({
 		if(evt.currentTarget.checked){
   			//Session.set("lesson_of_selected_checkbok",this);
   			checked_lessons.push(this);
+  			numOfSelectedUnit=Session.get("selected_unit");
+  			lessonsInSelectedUnit=Lessons.find({unit:numOfSelectedUnit}).count();
+            
+            console.log(lessonsInSelectedUnit);
+            console.log(checked_lessons.length);
+  			if(checked_lessons.length==lessonsInSelectedUnit){
+  				$('#select-all-checkboxes').prop('checked', true);
+  			}
 		}
 
 		else{

@@ -46,7 +46,7 @@
 			<tr class="lesson_creation">
 				<td>Date</td>
 				<td>
-				    <select id="month_of_lesson" class="form-control date-select" required="required">
+				    <!-- <select id="month_of_lesson" class="form-control date-select">
                         <option value="Month">Month</option>
                         <option value="January">January</option>
                         <option value="February">February</option>
@@ -62,7 +62,7 @@
 						<option value="December">December</option>
                     </select>
 					
-					<select id="day_of_lesson" class="form-control date-select" required="required">
+					<select id="day_of_lesson" class="form-control date-select">
                         <option value="Day">Day</option><option value="1">1</option>
                         <option value="2">2</option><option value="3">3</option>
                         <option value="4">4</option><option value="5">5</option>
@@ -80,11 +80,16 @@
                         <option value="28">28</option><option value="29">29</option>
                         <option value="30">30</option><option value="31">31</option>
                     </select>
-					<select id="year_of_lesson" class="form-control date-select" required="required">
+					<select id="year_of_lesson" class="form-control date-select">
                         <option value="Year">Year</option>
                         <option value="2014">2014</option>
                         <option value="2015">2015</option>
-                    </select>
+                    </select> -->
+
+                    <div class="input-group datetimepicker">
+    <span class="input-group-addon"><i class="fa fa-calendar"></i> <span class="glyphicon-calendar glyphicon"></span></span>
+    <input class="set-due-date form-control" type="text"/>
+</div>
 
                 </td>
 			</tr>

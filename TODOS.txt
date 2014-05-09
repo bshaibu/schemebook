@@ -1,5 +1,6 @@
 *	Center the login and register interfaces
 * 	Create Footer
 * 	Create Menu Bar
-* 	Add Validations Helpers
+* 	Add Validations Helpers	
 *	Choose Color for Site
+*	Add Calendar

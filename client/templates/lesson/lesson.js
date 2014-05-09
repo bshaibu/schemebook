@@ -83,7 +83,7 @@ Template.lesson.events({
             return;
         }
 
-<<<<<<< HEAD
+/*<<<<<<< HEAD*/
 	    /*if(lessonMonth=="Month" || lessonDay=="Day" || lessonYear=="Year"){
 	    	alert("Provide date of lession");
 	    	return;

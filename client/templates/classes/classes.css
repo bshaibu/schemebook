@@ -25,7 +25,7 @@
     left: 50%;
 }
 #classes_table{
-	margin-left: 320px;
+	margin-left: 280px;
 	width:450px;
 	
 }
@@ -43,6 +43,10 @@
 }
 .td{
 	width:100px;
+}
+
+#row{
+	height:30px;
 }
 
 

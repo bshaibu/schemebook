@@ -40,8 +40,15 @@ var okCancelEvents = function (selector, callbacks) {
 
 //this functions returns the list of all classes
 Template.classes.class=function(){
+<<<<<<< HEAD
+	
+ return Classes.find({});
+}
+=======
 	return Classes.find({});
 };
+>>>>>>> a6fc3f7c740e11483f4ad8cadb298101fbdc6923
+
 
 Template.classes.events({
  
@@ -75,9 +82,19 @@ Template.classes.events({
 
     },
      'click #pg_right':function(evt,tml){
+console.log("classes: "+Classes.find().count());
+console.log("records: "+Number(Session.get("record")));
+     if((Classes.find().count()-10)<=10 && Classes.find().count()!=0){
         
         Session.set("record",Number(Session.get('record'))+10);
       
+   }
+    },
+    'mouseenter .last_input':function(){
+     
+      var doc=document.createElement("TEXTFIELD");
+      var element=document.getElementById("units_entry");
+      element.appendChild(doc);
 
     }
 

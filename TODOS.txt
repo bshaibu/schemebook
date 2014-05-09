@@ -1,10 +1,10 @@
+* 	Add Calendar Events: http://stackoverflow.com/questions/14805189/how-to-keep-data-reactive-when-creating-an-array-from-a-collection
 *	Create Fixtures
 *	Undo Delete
 *	Bootstrap Buttons Everywhere
 *	Check All Inputs are Form-Controls, Add Auto Focus
 *	wrap each page with <div class="container" id="main"></div>
 *	Bootstrap Breadcrumbs
-* 	Add Calendar Events: http://stackoverflow.com/questions/14805189/how-to-keep-data-reactive-when-creating-an-array-from-a-collection
 * 	Add Validations Helpers/Add Form Validation Warnings
 *	Make Main Page Programmatic
 *	Programmatic Username in Navbar

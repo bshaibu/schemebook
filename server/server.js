@@ -16,13 +16,13 @@ if (Meteor.isServer) {
         }
         if (Lessons.find().count() === 0) {
             Lessons.insert({
-                number:"1", 
-                name:"", 
-                unit:"Learnability", 
-                objective:"", 
-                reading:"", 
-                lecture_notes:"", 
-                quiz:"", 
+                number:"1",
+                name:"",
+                unit:"Learnability",
+                objective:"",
+                reading:"",
+                lecture_notes:"",
+                quiz:"",
                 comments: "",
                 scheduled_date: ""
             });

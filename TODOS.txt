@@ -3,4 +3,7 @@
 * 	Create Menu Bar
 * 	Add Validations Helpers	
 *	Choose Color for Site
-*	Add Calendar
+*	Add Search Page
+*	Add Pagination
+*	Create Profile Page
+*	Bootstrap Breadcrumbs

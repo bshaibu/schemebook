@@ -1,6 +1,78 @@
 <template name="class">
+<<<<<<< HEAD
 	
 	
 	
 		
+=======
+	<div style="font-size:3em">{{name}}</div>
+			<!--/*	Database Schema
+Class: name, teacher, school, units
+Unit: name, number, class, lessons
+Lesson: number, name, unit, objective, reading, lecture_notes, quiz, comments, scheduled_date
+User: name, username, school, password,classes
+*/-->
+	        <div >
+	            {{#each units}}
+	            	{{>unit}}
+			    {{/each}}
+	        </div><!--/.nav-collapse -->
+	        
+		    <table border="2" style="width:100%">
+		        <tr>
+		            <th><input id="select-all-checkboxes" type="checkbox" value=""></th>
+					<th style="width:10%">Lesson</th>
+					<th style="width:30%">Objective</th>		
+					<th style="width:20%">Date</th>
+					<th style="width:30%">Progress Comments</th>
+					<th style="width:10%">Check Progress</th>
+		        </tr>
+				{{>selected_unit}}
+	        </table>
+		
+		
+		    <br>
+		
+			<div id="new_lesson">
+			    <button id="create_lesson_btn" type="button">Create New Lesson</button>
+	        </div>
+
+	        <div id="delete_lesson">
+			    <button id="delete_lesson_btn" type="button">Delete</button>
+	        </div>
+		
+		    <br>
+		    
+
+			
+</template>
+
+<template name="selected_unit">
+    {{#each lesson}}
+    	{{>selected_unit_lesson}}
+    {{/each}}
+</template>
+
+<template name="selected_unit_lesson">
+	<tr class="lesson-info">
+	    <td>	    		
+	    	<input class="checkbox" type="checkbox" value="">
+        </td>
+		<td class="lesson-name-td">{{number}}:{{name}}</td>
+		<td class="objective-td">{{objective}}</td>		
+		<td class="lesson-date-td">{{schedule_date}}</td>
+		<td class="comments-td">Null now</td>
+		<td class="progress-check-td">
+		    <img src="/pictures/check_mark.png" alt="some_text" style="length:50%;width:50%" onClick="checkUncheck(this)" data-image-type="uncheck"> 
+	    </td>
+    </tr>
+</template>
+
+<template name="unit">
+	<ul class="units_nav_bar" id="units_navigation_bar">
+        <li class="units_nav_bar_items">
+        	<a class="high_light_unit" href="#unit{{number}}">{{number}}:{{name}}</a>
+        </li>
+	</ul>
+>>>>>>> 4602a01472e4118ea3f0f148785c04302b10e9db
 </template>

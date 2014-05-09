@@ -7,7 +7,9 @@ standard-app-packages
 autopublish
 insecure
 jquery
-bootstrap
 iron-router
 accounts-base
 accounts-password
+moment
+jqbootstrapvalidation
+bootstrap-3

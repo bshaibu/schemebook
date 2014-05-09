@@ -41,21 +41,21 @@ var okCancelEvents = function (selector, callbacks) {
 //this functions returns the list of all classes
 Template.classes.class=function(){
 	return Classes.find({});
-}
+};
 
 Template.classes.events({
  
      "click #save_data":function(){
     
 
-      var classname=$("#classname").val();
-      var gra=$("#grade").val();
-      var sch=$("#school").val();     
+      var classname = $("#classname").val();
+      var gra = $("#grade").val();
+      var sch = $("#school").val();     
       console.log("contents in the database"+Classes.find().count());
       
    
     var len=classname.length;
-    if(len>0){      
+    if(len>0) {      
       Classes.insert({classname:classname,grade:gra,school:sch});
     }
     clearValues();
@@ -94,7 +94,7 @@ Template.the_class.events({
     Session.set("selected_class_id",this._id);
     Router.go("/"+this._id);///rep
   }
-})
+});
 
 var clearValues=function(){
   
@@ -102,5 +102,4 @@ var clearValues=function(){
   $("#grade").val("");
   $("#school").val("");  
   $("#modal-id").modal('hide');
-  
-}
+};

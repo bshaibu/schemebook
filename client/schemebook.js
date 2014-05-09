@@ -9,6 +9,7 @@ if (Meteor.isClient) {
         //this.route('class');
         this.route('classes');
         this.route('profile');
+        this.route('editProfile');
         this.route('calendar');
 
         this.route('classes');
@@ -51,6 +52,7 @@ if (Meteor.isClient) {
 
     //Session Variables
     Session.setDefault('displayMessage', null);
+    Session.setDefault('editingProfile', 'false');
 
     //Start Up Functions
     Meteor.startup(function () {

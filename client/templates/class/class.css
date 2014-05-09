@@ -44,6 +44,12 @@ tr.lesson_creation>td
   
 }
 
+.lesson-info:hover{
+    background-color:yellow;
+    cursor:pointer
+}
+
+
 
 
 

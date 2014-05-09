@@ -16,3 +16,4 @@
 *	Check All Inputs are Form-Controls, Add Auto Focus
 *	Add Form Validation Warnings
 *	Remove all console.log
+*	Add Page Hooks

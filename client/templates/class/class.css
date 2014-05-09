@@ -57,12 +57,15 @@ tr.lesson_creation>td
   
 }
 
-.lesson-info:hover{
+/*.lesson-info:hover{
     background-color:yellow;
     cursor:pointer
+}*/
+
+a.lesson-links:link {text-decoration:none;}
+a.lesson-links:hover{
+	cursor:pointer;
 }
-
-
 /* Navigation Bar */
 
 ul#units_navigation_bar ul {

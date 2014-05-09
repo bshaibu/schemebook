@@ -84,6 +84,7 @@ Template.classes.events({
   
 });
 
+
 Template.the_class.events({
   'click':function(){
     console.log(this._id,this.classname,this.school);

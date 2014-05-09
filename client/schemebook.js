@@ -20,8 +20,8 @@ if (Meteor.isClient) {
         this.route('class',{
             path: '/:class_id',
             data: function() {
-                console.log(this.params.class_id,"test");
-                console.log(Classes.findOne({_id:this.params.class_id}));
+                //console.log(this.params.class_id,"test");
+                //console.log(Classes.findOne({_id:this.params.class_id}));
                 return Classes.findOne({_id:this.params.class_id});
             }
         });

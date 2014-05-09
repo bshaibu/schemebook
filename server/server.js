@@ -95,13 +95,13 @@ Meteor.publish('classes', function () {
   return Classes.find({});
 });
 
-Meteor.publish('units', function (class_id) {
+Meteor.publish('units', function () {
   //check(list_id, String);
-  return Units.find({class_id:class_id});
+  return Units.find({});
 });
 
 Meteor.publish('lessons', function () {
   //check(list_id, String);
   return Lessons.find({});
-});
+});///////
 

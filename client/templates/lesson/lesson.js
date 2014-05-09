@@ -58,10 +58,20 @@ Template.lesson.events({
         	return;
         }
 
-	    if(lessonMonth=="Month" || lessonDay=="Day" || lessonYear=="Year"){
+	    /*if(lessonMonth=="Month" || lessonDay=="Day" || lessonYear=="Year"){
 	    	alert("Provide date of lession");
 	    	return;
+	    }*/
+
+	    if(dateString.length!=10 || date.length!=3){
+	    	alert("Provide date of lesson");
+	    	return;
 	    }
+
+        
+
+
+
 
     	Lessons.update({_id:Session.get("lesson_item_selected_id")},
     	           {name:lessonName,
@@ -70,12 +80,17 @@ Template.lesson.events({
 	    	           schedule_date:{month:date[0],day:date[1],year:date[2]},
 	    	           unit:unit},
     	           {upsert:true});
-	    	Router.go("class");
+	    	Router.go("/"+Session.get("selected_class_id"));
 	    
 	    
 	},
 
 	'click #cancel_lesson_save_btn':function() {
-		Router.go("class");
+		Router.go("/"+Session.get("selected_class_id"));
 	}
 })
+
+Template.lesson.class_name=function() {
+	console.log(Classes.findOne({_id:Session.get("selected_class_id")}));
+	return Classes.findOne({_id:Session.get("selected_class_id")}).classname;
+};

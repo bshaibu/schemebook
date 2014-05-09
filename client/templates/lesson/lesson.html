@@ -13,39 +13,40 @@
 			<tr class="lesson_creation">
 				<td style="width:30%">Lesson Name</td>
 				<td>
-					<input type="text" name="lesson_name" id="lesson_name" value="{{name}}">
+					<input type="text" name="lesson_name" id="lesson_name" value="{{name}}"
+					class="form-control lesson-text">
 				</td>
 			</tr>
 			
 			<tr class="lesson_creation">
 				<td>Objective</td>
-				<td><textarea rows="4" cols="70" id="objective">{{objective}}</textarea></td>
+				<td><textarea rows="4" cols="70" id="objective" class="form-control lesson-text">{{objective}}</textarea></td>
 			</tr>
 			
 			<tr class="lesson_creation">
 				<td>Reading</td>
-				<td><input type="text" name="reading" size="50"></td>
+				<td><input type="text" name="reading" size="50" class="form-control lesson-text"></td>
 			</tr>
 			
 			<tr class="lesson_creation">
 				<td>Lecture Notes</td>
-				<td><input type="text" name="notes"><button type="button">Upload</button></td>
+				<td><input type="text" name="notes" class="form-control lesson-text"></td>
 			</tr>
 			
 			<tr class="lesson_creation">
 				<td>Quiz</td>
-				<td><input type="text" name="quiz"><button type="button">Upload</button></td>
+				<td><input type="text" name="quiz" class="form-control lesson-text"></td>
 			</tr>
 			
 			<tr class="lesson_creation">
 				<td>Lesson 1 Comments</td>
-				<td><textarea rows="4" cols="70"></textarea></td>
+				<td><textarea rows="4" cols="70" class="form-control lesson-text"></textarea></td>
 			</tr>
-			
+
 			<tr class="lesson_creation">
 				<td>Date</td>
 				<td>
-				    <select id="month_of_lesson">
+				    <select id="month_of_lesson" class="form-control date-select" required="required">
                         <option value="Month">Month</option>
                         <option value="January">January</option>
                         <option value="February">February</option>
@@ -61,7 +62,7 @@
 						<option value="December">December</option>
                     </select>
 					
-					<select id="day_of_lesson">
+					<select id="day_of_lesson" class="form-control date-select" required="required">
                         <option value="Day">Day</option><option value="1">1</option>
                         <option value="2">2</option><option value="3">3</option>
                         <option value="4">4</option><option value="5">5</option>
@@ -79,7 +80,7 @@
                         <option value="28">28</option><option value="29">29</option>
                         <option value="30">30</option><option value="31">31</option>
                     </select>
-					<select id="year_of_lesson">
+					<select id="year_of_lesson" class="form-control date-select" required="required">
                         <option value="Year">Year</option>
                         <option value="2014">2014</option>
                         <option value="2015">2015</option>
@@ -91,8 +92,8 @@
 			<tr class="lesson_creation">
 			    <td></td>
 				<td>
-					<button type="button" id="save_new_lesson_btn">Save</button>
-					<button type="button" id="cancel_lesson_save_btn">Cancel</button>
+					<button type="button" id="save_new_lesson_btn" class="btn btn-primary">Save</button>
+					<button type="button" id="cancel_lesson_save_btn" class="btn btn-default">Cancel</button>
 				</td>
 
 		    </tr>

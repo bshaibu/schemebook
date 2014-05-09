@@ -1,7 +1,8 @@
 //This renders the template with lesson data if in edit mode
 Template.lesson.rendered=function() {
 	$('.datetimepicker').datetimepicker({
-		 pickTime: false
+		 pickTime: false,
+		 direction: 'up'
 	});
 	if(Session.get("lesson_item_selected")){
 		
@@ -32,13 +33,16 @@ Template.lesson.events({
 
 		var lessonName=$("#lesson_name").val();
 		var objective=$("#objective").val();
-		var lessonMonth=$("#month_of_lesson").val();
+		/*var lessonMonth=$("#month_of_lesson").val();
 		var lessonDay=$("#day_of_lesson").val();
 		var lessonYear=$("#year_of_lesson").val();
-		var date=lessonMonth+"/"+lessonDay+"/"+lessonYear;
+		var date=lessonMonth+"/"+lessonDay+"/"+lessonYear;*/
 		var lessonNumber=Lessons.find({}).count();
+        
+		var dateString=$('#date-picker').val();
+		var date=dateString.split("/");
 		var unit=Session.get("selected_unit");
-	    //console.log(lessonName,lessonMonth,lessonDay,lessonYear,objective);
+
 
 	    if(Session.get("lesson_item_selected")){
 	    	lessonNumber=Session.get("lesson_item_selected_num");
@@ -63,7 +67,7 @@ Template.lesson.events({
     	           {name:lessonName,
 	    	           number:lessonNumber,
 	    	           objective:objective,
-	    	           schedule_date:{month:lessonMonth,day:lessonDay,year:lessonYear},
+	    	           schedule_date:{month:date[0],day:date[1],year:date[2]},
 	    	           unit:unit},
     	           {upsert:true});
 	    	Router.go("class");

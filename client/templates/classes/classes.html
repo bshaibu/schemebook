@@ -1,3 +1,57 @@
-<template name="classes">
-	Classes
+<template name="classes" class="myclasses">
+	
+	<div class="container" id="main_div">
+		<div class="container" id="table_div">
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th>Classes</th>
+						<th>Grade</th>
+						<th>School</th>
+					</tr>
+				</thead>
+				<tbody>
+				{{#each class}}
+				    {{>the_class}}
+					
+				{{/each}}
+				</tbody>
+			</table>
+		</div>		
+		<div class="container" id="new_classes" >
+			<div class="container" id="modal_container">
+				<a class="btn" data-toggle="modal hide fade" href="#myModal" id="modal_toggler" >New Class</a>
+				<div class="modal hide fade" id="myModal">
+					<div class="modal-header">
+						<a class="close" data-dismiss="modal">&times;</a>
+						
+						<h3>Create A Class</h3>
+					</div>
+					<div class="modal-body">
+								 <label >Class Name</label>
+							      		<input id="classname" type="text" placeholder="Type the class name..">
+							     <label id="">Grade</label>
+							      		<input id="grade" type="text" placeholder="Type the grade you will be teaching…">
+							     <label id="">School</label>
+							      		<input id="school" type="text" placeholder="Type the name of the school…">			   	
+					</div>
+					<div class="modal-footer">
+						
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary" id="save_data">Save changes</button>
+					</div>
+				</div>
+			
+				
+			</div>
+		</div>
+	</div>
+</template>
+
+<template name="the_class">
+	<tr id="row">
+		<td>{{classname}}</td>
+		<td>{{grade}}</td>
+		<td>{{school}}</td>
+	</tr>
 </template>

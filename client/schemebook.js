@@ -7,6 +7,9 @@ if (Meteor.isClient) {
     //this.route('lesson');
     this.route('profile');
     this.route('calendar');
+
+    this.route('classes');
+
     this.route('login');
     this.route('register');
 
@@ -32,6 +35,7 @@ if (Meteor.isClient) {
     });
 
     this.route('notFound', {path: "*"});
+
   });
 }
 

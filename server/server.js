@@ -99,3 +99,24 @@ if (Meteor.isServer) {
 Meteor.publish("klasses",function(xum){
 	return Classes.find({},{limit:10,skip:xum});
 });
+
+
+
+
+
+
+Meteor.publish('classes', function () {
+  //check(list_id, String);
+  return Classes.find({});
+});
+
+Meteor.publish('units', function () {
+  //check(list_id, String);
+  return Units.find({});
+});
+
+Meteor.publish('lessons', function () {
+  //check(list_id, String);
+  return Lessons.find({});
+});///////
+

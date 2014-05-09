@@ -1,6 +1,13 @@
 <template name="class">
+<!-- <<<<<<< HEAD
+    
+    <br><br>
+    Hahaha
+	<div style="font-size:3em">{{classname}}</div>
+======= -->
 	<div class="container" id="main">
-		<div style="font-size:3em">{{name}}</div>
+		<div style="font-size:3em">{{classname}}</div>
+<!-- >>>>>>> cfd2d09a052e97b30ea13afa119f10bc3da37b1d -->
 			<!--/*	Database Schema
 				Class: name, teacher, school, units
 				Unit: name, number, class, lessons
@@ -71,10 +78,10 @@
 	    <td>	    		
 	    	<input class="checkbox" type="checkbox" value="">
         </td>
-		<td class="lesson-name-td">{{number}}:{{name}}</td>
+		<td class="lesson-name-td"><a class="lesson-links" href="/class/{{unit}}/{{number}}">{{number}}:{{name}}</a></td>
 		<td class="objective-td">{{objective}}</td>		
 		<td class="lesson-date-td">
-		{{schedule_date.month}} {{schedule_date.day}} {{schedule_date.year}}
+		{{schedule_date.month}}/{{schedule_date.day}}/{{schedule_date.year}}
 		</td>
 		<td class="comments-td">Null now</td>
 		<td class="progress-check-td">

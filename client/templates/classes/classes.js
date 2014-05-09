@@ -1,4 +1,5 @@
 Session.setDefault("record", 0);
+Session.setDefault("selected_class_id",null);
 
 Meteor.autorun(function(){
   Meteor.subscribe("klasses",Session.get("record"));
@@ -39,8 +40,15 @@ var okCancelEvents = function (selector, callbacks) {
 
 //this functions returns the list of all classes
 Template.classes.class=function(){
+<<<<<<< HEAD
+	
+ return Classes.find({});
+}
+=======
 	return Classes.find({});
 };
+>>>>>>> a6fc3f7c740e11483f4ad8cadb298101fbdc6923
+
 
 Template.classes.events({
  
@@ -74,19 +82,34 @@ Template.classes.events({
 
     },
      'click #pg_right':function(evt,tml){
+console.log("classes: "+Classes.find().count());
+console.log("records: "+Number(Session.get("record")));
+     if((Classes.find().count()-10)<=10 && Classes.find().count()!=0){
         
         Session.set("record",Number(Session.get('record'))+10);
       
+   }
+    },
+    'mouseenter .last_input':function(){
+     
+      var doc=document.createElement("TEXTFIELD");
+      var element=document.getElementById("units_entry");
+      element.appendChild(doc);
 
     }
 
   
 });
 
+
 Template.the_class.events({
   'click':function(){
     console.log(this._id,this.classname,this.school);
-    Router.go("class");
+    
+    
+    /////Router.go("class");
+    Session.set("selected_class_id",this._id);
+    Router.go("/"+this._id);///rep
   }
 });
 

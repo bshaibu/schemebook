@@ -3,6 +3,20 @@ Session.setDefault("lesson_item_selected",false);
 Session.setDefault("lesson_item_selected_id",null);
 Session.setDefault("lesson_item_selected_num",null);
 //Session.setDefault("lesson_of_selected_checkbok",null);
+var classHandle = Meteor.subscribe('classes');
+var unitsHandle = Meteor.subscribe('units');
+var lessonsHandle = Meteor.subscribe('lessons');
+
+
+
+/*Deps.autorun(function () {
+  var list_id = Session.get('list_id');
+  if (list_id)
+    todosHandle = Meteor.subscribe('todos', list_id);
+  else
+    todosHandle = null;
+});*/
+
 
 var checked_lessons=[];
 
@@ -12,12 +26,19 @@ Template.class.rendered=function() {
     Session.set("lesson_item_selected_id",null);
     Session.set("lesson_item_selected_num",null);
     //Session.set("lesson_of_selected_checkbok",null);
-    checked_lessons=[];//////
+    checked_lessons=[];//
 
 };
 
+
 Template.class.units=function() {
-    return Units.find({});
+    var selectedClassId=Session.get("selected_class_id");
+    console.log("Template.class.units");
+    console.log(selectedClassId,"selectedClassId");
+    //console.log(Units.find({class_id:selectedClassId}));
+    //console.log(Units.find({}, {_id:1}).map(function(item){ return item._id; }));
+    console.log("\n");
+    return Units.find({class_id:selectedClassId});
 };
 
 
@@ -129,7 +150,7 @@ Template.unitTwo.events({
 
 Template.class.unitNumGreaterThanNine=function(value) {
 	console.log("hehhe");
-	if(value>10){
+	if(value>9){
 		return true;
 	}
 	return false;
@@ -137,5 +158,5 @@ Template.class.unitNumGreaterThanNine=function(value) {
 
 Template.class.unitsGreaterThanNine=function() {
 	console.log("nine");
-	return Units.find({}).count()>10;
+	return Units.find({}).count()>9;
 };

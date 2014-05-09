@@ -10,6 +10,7 @@ if (Meteor.isClient) {
     this.route('login');
     this.route('register');
 
+
     //TZ 
     this.route('lesson',{
       path:'/class/:unitnumber/:lessonnumber',
@@ -21,5 +22,29 @@ if (Meteor.isClient) {
         return lesson;
       }
     })
+
+    this.route('notFound', {path: "*"});
   });
 }
+
+/*
+
+//Routing for Individual Classes
+
+this.route('classDetail', { 
+  path: '/class/:_id',
+  data: function() { return Classes.findOne(this.params._id); }
+});
+
+//put last
+
+Router.configure({
+//layoutTemplate: 'layout',
+notFoundTemplate: 'findesikke',
+});
+
+this.routte('notFound', {
+  path: "*"
+});
+
+*/

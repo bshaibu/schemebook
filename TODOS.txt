@@ -1,0 +1,4 @@
+*	Center the login and register interfaces
+* 	Create Footer
+* 	Create Menu Bar
+* 	Add Validations Helpers

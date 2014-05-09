@@ -1,6 +1,8 @@
 {
   "packages": {
     "iron-router": {},
-    "moment": {}
+    "moment": {},
+    "jqbootstrapvalidation": {},
+    "bootstrap-3": {}
   }
 }

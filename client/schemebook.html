@@ -1,19 +1,15 @@
 <head>
-	<!-- TODO: make title render per page -->
+    <!-- TODO: make title render based on page -->
   <title>Schemebook</title>
 </head>
 
 <body>
-	{{>menubar}}
-	<div id="main" class="container-fluid">
-	    <div class="row-fluid">	
-	        {{renderPage}}
-	    </div>
-	</div>
+    {{>menubar}}
+    <div id="main" class="container">
+        {{renderPage}}
+    </div>
+    
+    <footer>
+        {{>footer}}
+    </footer>
 </body>
-
-<!-- <footer>
-	{{>footer}}
-</footer>
-
--->

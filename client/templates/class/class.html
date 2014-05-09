@@ -7,11 +7,33 @@ Unit: name, number, class, lessons
 Lesson: number, name, unit, objective, reading, lecture_notes, quiz, comments, scheduled_date
 User: name, username, school, password,classes
 */-->
-	        <div >
-	            {{#each units}}
-	            	{{>unit}}
-			    {{/each}}
-	        </div><!--/.nav-collapse -->
+	        <br>
+            <ul class="nav nav-tabs">
+            {{#each units}}
+                {{#if unitNumGreaterThanNine number}}
+				{{else}}
+					{{>unit}}
+				{{/if}}
+
+				
+
+		    {{/each}}
+
+		    <!--This can be cleaned up. It puts the units in the drop down menu"-->
+		    {{#if unitsGreaterThanNine}}
+					<li class="dropdown unit_item_in_bar">
+        				<a href="#" id="myTabDrop1" class="dropdown-toggle" data-toggle="dropdown">More Units <b class="caret"></b></a>
+        				<ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop1">
+        				{{#each units}}
+        					{{#if unitNumGreaterThanNine number}}
+         						{{>unitTwo}}
+         					{{/if}}
+        				{{/each}}
+        				</ul>
+  					</li>
+			{{/if}}
+		    </ul>
+	       
 	        
 		    <table border="2" style="width:100%">
 		        <tr>
@@ -57,15 +79,25 @@ User: name, username, school, password,classes
 		</td>
 		<td class="comments-td">Null now</td>
 		<td class="progress-check-td">
-		    <img src="/pictures/check_mark.png" alt="some_text" style="length:50%;width:50%" onClick="checkUncheck(this)" data-image-type="uncheck"> 
+		    <!-- <img src="/pictures/check_mark.png" alt="some_text" style="length:50%;width:50%" onClick="checkUncheck(this)" data-image-type="uncheck">  -->
+		    {{#if checked}}
+			<input class="check-progress" type="checkbox" value="" checked>
+			{{else}}
+			<input class="check-progress" type="checkbox" value="">
+			{{/if}}
 	    </td>
     </tr>
 </template>
 
+
 <template name="unit">
-	<ul class="units_nav_bar" id="units_navigation_bar">
-        <li class="units_nav_bar_items">
-        	<a class="high_light_unit" href="#unit{{number}}">{{number}}:{{name}}</a>
-        </li>
-	</ul>
+	<li class="unit_item_in_bar">
+	<a href="#messages" data-toggle="tab">{{number}}:{{name}}</a>
+	</li>
+</template>
+
+<template name="unitTwo">
+	<li>
+		<a href="#dropdown1" tabindex="-1" data-toggle="tab">{{number}}:{{name}}</a>
+	</li>
 </template>

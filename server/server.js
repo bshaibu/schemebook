@@ -33,3 +33,7 @@ if (Meteor.isServer) {
         }
   });
 }
+
+Meteor.publish("klasses",function(xum){
+	return Classes.find({},{limit:10,skip:xum});
+});

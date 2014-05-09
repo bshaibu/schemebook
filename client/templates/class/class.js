@@ -56,24 +56,7 @@ Template.class.events({
 	    	checked_lessons=[];
 	    }
 	}
-/*=======
-    'click #delete_lesson_btn':function() {
-        //lesson_doc=Session.get("lesson_of_selected_checkbok");//document to be deletede
-        for(var i=0;i<checked_lessons.length;i++){
-            Lessons.remove(checked_lessons[i]._id);
-        }
-    },
 
-    'change #select-all-checkboxes':function(evt) {
-        if(evt.currentTarget.checked){
-            $('.checkbox').prop('checked', true);
-        }
-
-        else{
-            $('.checkbox').prop('checked', false);
-        }
-    }
->>>>>>> 5cca4e6a66a4f731d094312de3332e8e7e30875e*/
 });
 
 Template.selected_unit.lesson=function() {
@@ -86,11 +69,10 @@ Template.selected_unit_lesson.events({
         Session.set("lesson_item_selected",true);
         Session.set("lesson_item_selected_id",this._id);
         Session.set("lesson_item_selected_num",this.number);
-        //Router.go("lesson");///////////////////////////////////////////////////////////////////
         Router.go("/class/"+this.unit+"/"+this.number);
     },
 
-//<<<<<<< HEAD
+
 	'change .checkbox' :function(evt){
 		console.log("hosa");
 		if(evt.currentTarget.checked){
@@ -105,14 +87,6 @@ Template.selected_unit_lesson.events({
   				$('#select-all-checkboxes').prop('checked', true);
   			}
 		}
-/*=======
-    'change .checkbox' :function(evt){
-        console.log("hosa");
-        if(evt.currentTarget.checked){
-            //Session.set("lesson_of_selected_checkbok",this);
-            checked_lessons.push(this);
-        }
->>>>>>> 5cca4e6a66a4f731d094312de3332e8e7e30875e*/
 
         else{
             index=checked_lessons.indexOf(this);
@@ -123,6 +97,16 @@ Template.selected_unit_lesson.events({
             //Session.set("lesson_of_selected_checkbok",null);
         }
         
+    },
+
+    'change .check-progress' :function(evt) {
+    	if(evt.currentTarget.checked){////////
+    		Lessons.update({_id:this._id},{$set: {checked: true}});
+    	}
+
+    	else{
+			Lessons.update({_id:this._id},{$set: {checked: false}});
+    	}
     }
 })
 
@@ -133,3 +117,25 @@ Template.unit.events({
         Session.set("selected_unit",this.number);
     }
 });
+
+Template.unitTwo.events({
+    'click':function() {
+        console.log(this.name);
+        console.log(this.number);
+        Session.set("selected_unit",this.number);
+    }
+});
+
+
+Template.class.unitNumGreaterThanNine=function(value) {
+	console.log("hehhe");
+	if(value>10){
+		return true;
+	}
+	return false;
+};
+
+Template.class.unitsGreaterThanNine=function() {
+	console.log("nine");
+	return Units.find({}).count()>10;
+};

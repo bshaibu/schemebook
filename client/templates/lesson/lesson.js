@@ -1,5 +1,8 @@
 //This renders the template with lesson data if in edit mode
 Template.lesson.rendered=function() {
+	$('.datetimepicker').datetimepicker({
+		 pickTime: false
+	});
 	if(Session.get("lesson_item_selected")){
 		
 		var lessonInfo=Lessons.findOne({_id:Session.get("lesson_item_selected_id")})
@@ -17,6 +20,7 @@ Template.lesson.rendered=function() {
         $('#year_of_lesson option[value="'+year+'"]').attr('selected','selected');
 	}
 };
+
 
 Template.lesson.ofUnit=function() {
 	console.log(Session.get("selected_unit"));

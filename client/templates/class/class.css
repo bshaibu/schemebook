@@ -4,6 +4,12 @@ position:relative;
 left:34.1%;
 }
 
+.div_units_nav_bar{
+	width:100%;
+	height:10%;
+	overflow-x:scroll;
+}
+
 .units_nav_bar
 {
 list-style-type:none;
@@ -16,6 +22,7 @@ li.units_nav_bar_items
 {
 float:left;
 width:10%;
+height:10%;
 }
 a.high_light_unit:link,a.high_light_unit:visited
 {
@@ -68,3 +75,8 @@ ul#units_navigation_bar ul {
 		display: block;
 		left:100%;
 	}
+
+
+.unit_item_in_bar{
+	width:10%;
+}

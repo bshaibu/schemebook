@@ -1,66 +1,70 @@
 <template name="class">
+<!-- <<<<<<< HEAD
     
     <br><br>
     Hahaha
 	<div style="font-size:3em">{{classname}}</div>
+======= -->
+	<div class="container" id="main">
+		<div style="font-size:3em">{{classname}}</div>
+<!-- >>>>>>> cfd2d09a052e97b30ea13afa119f10bc3da37b1d -->
 			<!--/*	Database Schema
-Class: name, teacher, school, units
-Unit: name, number, class, lessons
-Lesson: number, name, unit, objective, reading, lecture_notes, quiz, comments, scheduled_date
-User: name, username, school, password,classes
-*/-->
-	        <br>
-            <ul class="nav nav-tabs">
-            {{#each units}}
-                {{#if unitNumGreaterThanNine number}}
-				{{else}}
-					{{>unit}}
+				Class: name, teacher, school, units
+				Unit: name, number, class, lessons
+				Lesson: number, name, unit, objective, reading, lecture_notes, quiz, comments, scheduled_date
+				User: name, username, school, password,classes
+			*/-->
+		        <br>
+	            <ul class="nav nav-tabs">
+	            {{#each units}}
+	                {{#if unitNumGreaterThanNine number}}
+					{{else}}
+						{{>unit}}
+					{{/if}}	
+			    {{/each}}
+
+			    <!--This can be cleaned up. It puts the units in the drop down menu"-->
+			    {{#if unitsGreaterThanNine}}
+						<li class="dropdown unit_item_in_bar">
+	        				<a href="#" id="myTabDrop1" class="dropdown-toggle" data-toggle="dropdown">More Units <b class="caret"></b></a>
+	        				<ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop1">
+	        				{{#each units}}
+	        					{{#if unitNumGreaterThanNine number}}
+	         						{{>unitTwo}}
+	         					{{/if}}
+	        				{{/each}}
+	        				</ul>
+	  					</li>
 				{{/if}}
-
+			    </ul>
+		       
+		        
+			    <table id="lessonTable" border="2" style="width:100%">
+			        <tr>
+			            <th><input id="select-all-checkboxes" type="checkbox" value=""></th>
+						<th style="width:10%">Lesson</th>
+						<th style="width:30%">Objective</th>		
+						<th style="width:20%">Date</th>
+						<th style="width:30%">Progress Comments</th>
+						<th style="width:10%">Check Progress</th>
+			        </tr>
+					{{>selected_unit}}
+		        </table>
 				
+			    <br/>
+			
+				<div id="new_lesson">
+					<button id="create_lesson_btn" class="btn btn-success" type="button">
+					    Create New Lesson
+					</button>
+			    </div>
 
-		    {{/each}}
-
-		    <!--This can be cleaned up. It puts the units in the drop down menu"-->
-		    {{#if unitsGreaterThanNine}}
-					<li class="dropdown unit_item_in_bar">
-        				<a href="#" id="myTabDrop1" class="dropdown-toggle" data-toggle="dropdown">More Units <b class="caret"></b></a>
-        				<ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop1">
-        				{{#each units}}
-        					{{#if unitNumGreaterThanNine number}}
-         						{{>unitTwo}}
-         					{{/if}}
-        				{{/each}}
-        				</ul>
-  					</li>
-			{{/if}}
-		    </ul>
-	       
-	        
-		    <table border="2" style="width:100%">
-		        <tr>
-		            <th><input id="select-all-checkboxes" type="checkbox" value=""></th>
-					<th style="width:10%">Lesson</th>
-					<th style="width:30%">Objective</th>		
-					<th style="width:20%">Date</th>
-					<th style="width:30%">Progress Comments</th>
-					<th style="width:10%">Check Progress</th>
-		        </tr>
-				{{>selected_unit}}
-	        </table>
-		
-		
-		    <br>
-		
-			<div id="new_lesson">
-			    <button id="create_lesson_btn" class="btn btn-success" type="button">Create New Lesson</button>
-	        </div>
-
-	        <div id="delete_lesson">
-			    <button id="delete_lesson_btn" class="btn btn-danger" type="button">Delete</button>
-	        </div>
-		
-		    <br>
+			    <div id="delete_lesson">
+					<button id="delete_lesson_btn" class="btn btn-danger" type="button">
+						Delete Selected
+					</button>
+			    </div>
+	</div>
 </template>
 
 <template name="selected_unit">
@@ -81,7 +85,6 @@ User: name, username, school, password,classes
 		</td>
 		<td class="comments-td">Null now</td>
 		<td class="progress-check-td">
-		    <!-- <img src="/pictures/check_mark.png" alt="some_text" style="length:50%;width:50%" onClick="checkUncheck(this)" data-image-type="uncheck">  -->
 		    {{#if checked}}
 			<input class="check-progress" type="checkbox" value="" checked>
 			{{else}}

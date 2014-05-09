@@ -1,7 +1,13 @@
-div#new_lesson
-{
-position:relative;
-left:34.1%;
+#lessonTable {
+	padding-bottom: 0.5em;
+}
+
+div#new_lesson	{
+	text-align: center;
+}
+
+div#delete_lesson {
+	text-align: right;
 }
 
 .div_units_nav_bar{

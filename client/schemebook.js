@@ -6,17 +6,28 @@ if (Meteor.isClient) {
         this.route('home', {path: 'index'});
         this.route('home', {path: '/'});
 
-        this.route('class');
+        //this.route('class');
         this.route('classes');
         this.route('profile');
+        this.route('editProfile');
         this.route('calendar');
 
         this.route('classes');
-
+         
         this.route('login');
         this.route('register');
 
         //TZ 
+        this.route('class',{
+            path: '/:class_id',
+            data: function() {
+                //console.log(this.params.class_id,"test");
+                //console.log(Classes.findOne({_id:this.params.class_id}));
+                return Classes.findOne({_id:this.params.class_id});
+            }
+        });
+
+
         this.route('lesson',{
             path: '/class/:unitnumber/:lessonnumber',
             data: function(){
@@ -41,6 +52,7 @@ if (Meteor.isClient) {
 
     //Session Variables
     Session.setDefault('displayMessage', null);
+    Session.setDefault('editingProfile', 'false');
 
     //Start Up Functions
     Meteor.startup(function () {

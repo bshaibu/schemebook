@@ -3,6 +3,7 @@
     "iron-router": {},
     "bootstrap-3": {},
     "fullcalendar": {},
+    "moment": {},
     "bootstrap3-datetimepicker": {}
   }
 }

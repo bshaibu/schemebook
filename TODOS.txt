@@ -1,18 +1,15 @@
-*	Center the login and register interfaces
-* 	Create Footer
-* 	Create Menu Bar
-* 	Add Validations Helpers	
-*	Choose Color for Site
-*	Add Search Page
-*	Add Pagination
-*	Create Profile Page
-*	Bootstrap Breadcrumbs
-*	Bootstrap Buttons Everywhere
-*	Log In and Out
-*	Update Profile (Image and Password)
-*	wrap each page with <div class="container" id="main"></div>
-*	Integrate Date Picker: https://github.com/tsega/meteor-bootstrap3-datetimepicker/
 * 	Add Calendar Events: http://stackoverflow.com/questions/14805189/how-to-keep-data-reactive-when-creating-an-array-from-a-collection
+*	Create Fixtures
+*	Undo Delete
+*	Bootstrap Buttons Everywhere
 *	Check All Inputs are Form-Controls, Add Auto Focus
-*	Add Form Validation Warnings
+*	wrap each page with <div class="container" id="main"></div>
+*	Bootstrap Breadcrumbs
+* 	Add Validations Helpers/Add Form Validation Warnings
+*	Make Main Page Programmatic
+*	Programmatic Username in Navbar
+*	Update Profile Page Buttons (Image and Password)
 *	Remove all console.log
+*	Add Search Page
+*	Add Page Hooks
+* 	Create Footer

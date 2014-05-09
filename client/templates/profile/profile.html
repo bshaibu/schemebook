@@ -5,21 +5,46 @@
             <div class="col-md-8"> {{currentUser.profile.name}}</div>
 
             <b><div class="col-md-4">Email:</div></b>
-            <div class="col-md-8"> {{email}} </div>
+            <div class="col-md-8"> {{currentUser.profile.email}} </div>
 
-            <b><div class="col-md-4">Change Password</div></b>
+            <b><div class="col-md-4">Password</div></b>
             <div class="col-md-8"> 
-                <button type="button" class="btn btn-danger" 
-                        onClick="alert('Let\'s pretend your password was updated!')">Change</button>
+                ******
             </div>
-            <div class="col-md-4"><b>Change Image URL</b></div>
+            <div class="col-md-4"><b>Image URL</b></div>
             <div class="col-md-8">
-                <button type="button" class="btn btn-danger" 
-                        onClick="alert('Let\'s pretend your password was updated!')">Change</button>
+                {{currentUser.profile.password}}
             </div>
+            <button class="btn btn-primary" id="editProfileButton">Edit Profile</button>
         </div>
         <div class="col-md-6">
             <img src="http://lorempixel.com/400/400/" />
-        </div>         
+        </div>       
     </div><!--/container-->
+</template>
+
+
+
+<template name="editProfile">
+    <form class="form-signin" role="form" id="register-form">
+        <h4 class="modal-title">Edit Profile</h4>
+        User Name*
+        <input type="text" id="account-user-name" class="form-control" value="mockUserName"  required readonly>
+        Picture URL
+        <input type="url" id="account-pic-url" class="form-control" value="{{currentUser.profile.pic_url}}" autofocus>
+        Name*
+        <input type="text" id="account-full-name" class="form-control" value="{{currentUser.profile.name}}" required >
+        Email*
+        <input type="email" id="account-email" class="form-control" value="{{currentUser.profile.email}}" required>
+        Old Password*
+        <input type="password" id="account-old-password" class="form-control" value="{OldPassword}}" required>
+        New Password
+        <input type="password" id="account-password" class="form-control" placeholder="New Password">
+        Confirm New Password
+        <input type="password" id="account-confirm-password" class="form-control" placeholder="Confirm New Password">
+
+        <button class="btn btn-lg btn-success btn-block" type="submit" id="save">Save</button>
+        <button class="btn btn btn-danger btn-block" type="submit" id="cancel">Cancel</button>
+    </form>
+    *required
 </template>

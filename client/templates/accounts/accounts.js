@@ -38,28 +38,35 @@ Template.register.events({
             username = tmpl.find('#account-user-name').value,
             name = tmpl.find('#account-full-name').value;
 
+        var createCallback = function(err) {
+            if (err) {
+                // Inform the user that account creation failed
+                Session.set('displayMessage', 'Failed to Create');
+            }
+            else {
+                // Success. Account has been created and the user
+                // has logged in successfully. 
+                console.log("success");
+                Router.go('/');
+            }
+        };
+
+        var accountOptions = {   username: username,
+                                    email: email,
+                                    password : password,
+                                    profile: {
+                                        name: name,
+                                        email: email,
+                                        pic_url: ''}
+        };
+
         // Trim and validate the input
         email = trimInput(email);
 
         if ( isValidPassword(password) && areMatchingPasswords(password, confirmation) ) {
-            Accounts.createUser({   username: username,
-                                    email: email,
-                                    password : password,
-                                    profile: {  name: name}},
-                function(err){
-                    if (err) {
-                        // Inform the user that account creation failed
-                        Session.set('displayMessage', 'Failed to Create');
-                    }
-                    else {
-                        // Success. Account has been created and the user
-                        // has logged in successfully. 
-                        console.log("success");
-                        Router.go('/');
-                    }
-            });
+            Accounts.createUser(accountOptions, createCallback);
         }
-
+        
         return false;
     }
   });

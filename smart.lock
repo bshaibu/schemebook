@@ -5,6 +5,7 @@
       "iron-router": {},
       "bootstrap-3": {},
       "fullcalendar": {},
+      "moment": {},
       "bootstrap3-datetimepicker": {}
     },
     "packages": {
@@ -22,6 +23,11 @@
         "git": "https://github.com/TimHeckel/meteor-fullcalendar.git",
         "tag": "v1.6.1",
         "commit": "78dba7c564bf7baacf6556c70a3cc179d0e137c4"
+      },
+      "moment": {
+        "git": "https://github.com/acreeger/meteor-moment.git",
+        "tag": "v2.6.0",
+        "commit": "26156df681750fd6e6ed77043eef32b6653ebbdf"
       },
       "bootstrap3-datetimepicker": {
         "git": "https://github.com/tsega/meteor-bootstrap3-datetimepicker.git",
